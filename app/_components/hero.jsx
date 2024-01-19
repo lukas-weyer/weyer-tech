@@ -1,6 +1,4 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { MotionDiv } from './MotionDiv';
+import { MotionDiv } from './motionDiv';
 import Message from './message';
 import Writing from './writing';
 
