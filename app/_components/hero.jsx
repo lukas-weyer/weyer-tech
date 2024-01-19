@@ -39,9 +39,9 @@ const item = {
 
 export default function Hero() {
   return (
-    <div className="container max-w-6xl">
+    <div className="container max-w-2xl">
       <div className="min-w-full md:mockup-window md:border md:bg-base-300">
-        <div className="flex min-w-fit flex-col justify-center px-6 py-12 md:bg-base-200 md:px-10 md:py-16">
+        <div className="flex min-w-fit flex-col justify-center p-4 md:bg-base-200 md:p-6">
           <MotionDiv variants={container} initial="hidden" animate="visible">
             <MotionDiv variants={item}>
               <Message>Hej! Jestem Łukasz 👋🏻</Message>
@@ -67,7 +67,7 @@ export default function Hero() {
               </Message>
             </MotionDiv>
 
-            <div className="divider" />
+            {/* <div className="divider" /> */}
             <MotionDiv variants={writing}>
               <Writing />
             </MotionDiv>

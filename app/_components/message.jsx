@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 export default function Message({ children }) {
   return (
-    <div className="chat chat-start mb-8">
+    <div className="chat chat-start mb-4">
       <div className="avatar chat-image">
-        <div className="w-10 rounded-full lg:w-20">
+        <div className="w-10 rounded-full">
           <Image
             src="/lukasz_weyer.jpeg"
             width={80}
@@ -17,9 +17,7 @@ export default function Message({ children }) {
         </div>
       </div>
       <div className="chat-header mb-1">Łukasz Weyer</div>
-      <div className="chat-bubble max-w-2xl p-6 text-base xl:text-lg 2xl:text-2xl">
-        {children}
-      </div>
+      <div className="chat-bubble max-w-md p-4 text-base">{children}</div>
     </div>
   );
 }
