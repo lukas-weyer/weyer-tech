@@ -1,9 +1,10 @@
-import Image from 'next/image';
+import AboutCard from './_components/aboutCard';
+import Hero from './_components/hero';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <button className="btn btn-primary">Hello daisyUI!</button>
+    <main className="flex min-h-screen flex-col items-center  md:p-24">
+      <Hero />
     </main>
   );
 }
