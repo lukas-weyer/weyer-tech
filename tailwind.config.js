@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from 'daisyui';
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,7 +15,7 @@ module.exports = {
       },
     },
   },
-  plugins: [daisyui],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
   // daisyui: {
   //   themes: ['cupcake', 'dark'],
   // },

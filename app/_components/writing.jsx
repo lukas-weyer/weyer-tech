@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-export default function Message({ children }) {
+export default function Writing() {
   return (
-    <div className="chat chat-start mb-8">
+    <div className="flex items-center">
       <div className="avatar chat-image">
-        <div className="w-10 rounded-full lg:w-20">
+        <div className="w-10 rounded-full lg:w-10">
           <Image
             src="/lukasz_weyer.jpeg"
             width={80}
@@ -16,10 +16,8 @@ export default function Message({ children }) {
           />
         </div>
       </div>
-      <div className="chat-header mb-1">Łukasz Weyer</div>
-      <div className="chat-bubble max-w-2xl p-6 text-base xl:text-lg 2xl:text-2xl">
-        {children}
-      </div>
+      <span className="chat-header mx-4">Łukasz Weyer pisze</span>
+      <span className="loading loading-dots loading-sm" />
     </div>
   );
 }
