@@ -1,27 +1,85 @@
 import Image from 'next/image';
-import Link from 'next/link';
+
+import logo from '@/public/weyer-tech.png';
+import ArticleImage from './articleImage';
+import { MotionDiv } from './motionDiv';
+import { delay } from 'framer-motion';
 
 export default function AboutCard() {
   return (
-    <Link
-      href="/about"
-      className="flex flex-col items-center rounded-2xl border border-gray-200 bg-base-200 shadow hover:bg-base-100 md:max-w-xl md:flex-row"
+    <MotionDiv
+      className="w-full max-w-3xl"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 5 }}
     >
-      <Image
-        className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-        src="/lukasz_weyer_zrm.jpeg"
-        width={400}
-        height={400}
-        alt=""
-      />
-      <div className="flex flex-col justify-between p-4 leading-normal">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Więcej o mnie...
-        </h5>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          Tu znajdziesz więcej informacji o tym kim jestem i czym się zajmuję.
-        </p>
+      <div className="card md:bg-base-200 md:shadow-lg ">
+        <div className="card-body items-center">
+          <h3 className="card-title my-4 self-center text-base text-gray-600">
+            Kilka słów o mnie...
+          </h3>
+          <div className="divider" />
+
+          <article className="prose dark:prose-invert">
+            <ArticleImage
+              src="/lukasz_weyer_zrm.jpeg"
+              alt="Łukasz Weyer - zdjęcie autora - ratownictwo medyczne"
+              mask="squircle"
+            />
+            <h2>Ratownictwo medyczne</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              esse in ipsam quasi dolor minima, eos assumenda debitis illo!
+              Perspiciatis similique amet ea expedita illum delectus debitis
+              fugit quos sint?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              esse in ipsam quasi dolor minima, eos assumenda debitis illo!
+              Perspiciatis similique amet ea expedita illum delectus debitis
+              fugit quos sint?
+            </p>
+
+            <ArticleImage
+              src="/weyer-tech.png"
+              alt="weyer.tech - logo"
+              mask="square"
+            />
+            <h2>Programowanie</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              esse in ipsam quasi dolor minima, eos assumenda debitis illo!
+              Perspiciatis similique amet ea expedita illum delectus debitis
+              fugit quos sint?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              esse in ipsam quasi dolor minima, eos assumenda debitis illo!
+              Perspiciatis similique amet ea expedita illum delectus debitis
+              fugit quos sint?
+            </p>
+
+            <ArticleImage
+              src="/lukasz_weyer_zphm.jpeg"
+              alt="Łukasz Weyer - zdjęcie autora - zespół pomocy humanitarno-medycznej"
+              mask="squircle"
+            />
+            <h2>Zespół Pomocy Humanitarno-Medycznej</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              esse in ipsam quasi dolor minima, eos assumenda debitis illo!
+              Perspiciatis similique amet ea expedita illum delectus debitis
+              fugit quos sint?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              esse in ipsam quasi dolor minima, eos assumenda debitis illo!
+              Perspiciatis similique amet ea expedita illum delectus debitis
+              fugit quos sint?
+            </p>
+          </article>
+        </div>
       </div>
-    </Link>
+    </MotionDiv>
   );
 }

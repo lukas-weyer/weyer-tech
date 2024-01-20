@@ -3,20 +3,6 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="footer footer-center rounded bg-base-200 p-10 text-base-content">
-      <nav className="grid grid-flow-col gap-4">
-        <Link href="/" className="link-hover link">
-          Strona główna
-        </Link>
-        <Link href="/about" className="link-hover link">
-          O mnie
-        </Link>
-        <Link href="/portfolio" className="link-hover link">
-          Portfolio
-        </Link>
-        <Link href="/blog" className="link-hover link">
-          Blog
-        </Link>
-      </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
           <a href="https://twitter.com/weyer_rm">
