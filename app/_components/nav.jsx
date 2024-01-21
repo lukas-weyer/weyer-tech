@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Logo from './logo';
+import ThemeControler from './themeController';
 
 export default function Nav() {
   return (
@@ -50,6 +51,7 @@ export default function Nav() {
           </li>
         </ul>
       </div>
+      <ThemeControler />
     </div>
   );
 }

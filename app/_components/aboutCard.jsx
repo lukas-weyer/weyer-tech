@@ -24,14 +24,12 @@ export default function AboutCard() {
             <ArticleImage
               src="/lukasz_weyer_zrm.jpeg"
               alt="Łukasz Weyer - zdjęcie autora - ratownictwo medyczne"
-              mask="squircle"
+              mask="mask mask-squircle w-60"
             />
             <h2>Ratownictwo medyczne</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              esse in ipsam quasi dolor minima, eos assumenda debitis illo!
-              Perspiciatis similique amet ea expedita illum delectus debitis
-              fugit quos sint?
+              Ratowikiem jest od 2008 roku. Pracuję w Zespołach Ratownictwa
+              Medycznego.
             </p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
@@ -43,7 +41,7 @@ export default function AboutCard() {
             <ArticleImage
               src="/weyer-tech.png"
               alt="weyer.tech - logo"
-              mask="square"
+              mask="mask mask-square w-60"
             />
             <h2>Programowanie</h2>
             <p>
@@ -62,7 +60,7 @@ export default function AboutCard() {
             <ArticleImage
               src="/lukasz_weyer_zphm.jpeg"
               alt="Łukasz Weyer - zdjęcie autora - zespół pomocy humanitarno-medycznej"
-              mask="squircle"
+              mask="mask mask-squircle w-60"
             />
             <h2>Zespół Pomocy Humanitarno-Medycznej</h2>
             <p>
