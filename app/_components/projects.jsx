@@ -26,6 +26,7 @@ export default function Projects() {
       className="w-full max-w-3xl md:mb-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
     >
       <article className="card md:bg-base-200 md:shadow-lg">
         <div className="card-body items-center">

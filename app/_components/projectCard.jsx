@@ -4,7 +4,7 @@ export default function ProjectCard({ project, ...rest }) {
   const { title, description, tech, url, img, alt } = project;
 
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <div className="card max-w-xs border border-solid md:border-none md:bg-base-200 md:shadow-lg">
       <figure>
         <Image
           {...rest}
@@ -29,7 +29,7 @@ export default function ProjectCard({ project, ...rest }) {
         <p>{description}</p>
         <div className="card-actions mt-4 justify-end">
           <a href={url} className="btn btn-neutral">
-            Zobacz...
+            zobacz...
           </a>
         </div>
       </div>
