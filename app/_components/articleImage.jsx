@@ -8,8 +8,8 @@ export default function ArticleImage({ mask, src, alt }) {
           <Image
             src={src}
             alt={alt}
-            width={400}
-            height={400}
+            width={200}
+            height={200}
             style={{ objectFit: 'contain' }}
           />
         </div>

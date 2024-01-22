@@ -39,31 +39,37 @@ const item = {
 
 export default function ChatWindow() {
   return (
-    <div className="w-full max-w-3xl md:mockup-window md:mb-12 md:bg-base-300 md:shadow-lg">
-      <div className="flex min-w-full flex-col justify-center p-4 md:bg-base-200 md:p-6">
-        <MotionDiv variants={container} initial="hidden" animate="visible">
-          <MotionDiv variants={item}>
-            <Message>Hej! Jestem Łukasz 👋🏻</Message>
-          </MotionDiv>
+    <MotionDiv
+      initial={{ y: 100 }}
+      animate={{ y: 0 }}
+      className="w-full max-w-3xl"
+    >
+      <div className="md:mockup-window md:mb-12 md:bg-base-300 md:shadow-lg">
+        <div className="flex min-w-full flex-col justify-center p-4 md:bg-base-200 md:p-6">
+          <MotionDiv variants={container} initial="hidden" animate="visible">
+            <MotionDiv variants={item}>
+              <Message>Hej! Jestem Łukasz 👋🏻</Message>
+            </MotionDiv>
 
-          <MotionDiv variants={item}>
-            <Message>
-              Pasjonuję się ratownictwem medycznym 🚑 i programowaniem 👨🏻‍💻 – to
-              właśnie tym zajmuję się na co dzień!
-            </Message>
-          </MotionDiv>
+            <MotionDiv variants={item}>
+              <Message>
+                Pasjonuję się ratownictwem medycznym 🚑 i programowaniem 👨🏻‍💻 – to
+                właśnie tym zajmuję się na co dzień!
+              </Message>
+            </MotionDiv>
 
-          <MotionDiv variants={item}>
-            <Message>
-              Poniżej naszego chatu znajdziesz więcej informacji o mnie...
-            </Message>
-          </MotionDiv>
+            <MotionDiv variants={item}>
+              <Message>
+                Poniżej naszego chatu znajdziesz więcej informacji o mnie...
+              </Message>
+            </MotionDiv>
 
-          <MotionDiv variants={writing}>
-            <Writing />
+            <MotionDiv variants={writing}>
+              <Writing />
+            </MotionDiv>
           </MotionDiv>
-        </MotionDiv>
+        </div>
       </div>
-    </div>
+    </MotionDiv>
   );
 }
