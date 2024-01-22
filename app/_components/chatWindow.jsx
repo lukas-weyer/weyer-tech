@@ -42,9 +42,9 @@ export default function ChatWindow() {
     <MotionDiv
       initial={{ y: 100 }}
       animate={{ y: 0 }}
-      className="w-full max-w-3xl"
+      className="w-full max-w-3xl md:mb-12"
     >
-      <div className="md:mockup-window md:mb-12 md:bg-base-300 md:shadow-lg">
+      <div className="md:mockup-window md:bg-base-300 md:shadow-lg">
         <div className="flex min-w-full flex-col justify-center p-4 md:bg-base-200 md:p-6">
           <MotionDiv variants={container} initial="hidden" animate="visible">
             <MotionDiv variants={item}>

@@ -8,34 +8,34 @@ import { delay } from 'framer-motion';
 export default function AboutCard() {
   return (
     <MotionDiv
-      className="w-full max-w-3xl"
+      className="w-full max-w-3xl md:mb-12"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 5 }}
     >
-      <div className="card md:bg-base-200 md:shadow-lg ">
+      <div className="card md:bg-base-200 md:shadow-lg">
         <div className="card-body items-center">
           <h3 className="card-title my-4 self-center text-base text-gray-600">
             Kilka słów o mnie...
           </h3>
-
+          <div className="divider" />
           <article className="prose dark:prose-invert">
-            <hr />
             <h2>Ratownictwo medyczne</h2>
             <ArticleImage
               src="/lukasz_weyer_zrm.jpeg"
               alt="Łukasz Weyer - zdjęcie autora - ratownictwo medyczne"
               mask="mask mask-squircle w-60"
+              priority
             />
+            <blockquote className="text-2xl">
+              <p>Prawdziwa siła tkwi w empatii</p>
+            </blockquote>
             <p>
               Pracuję w Zespołach Ratownictw Medycznego od 2008 roku. W świecie,
               gdzie syreny i światła są codziennym tłem, droga którą pokonałem
               nauczyła mnie nie tylko cennych umiejętności medycznych, ale
               również jak być ostoją spokoju w chaosie.
             </p>
-            <blockquote className="text-2xl">
-              <p>Prawdziwa siła tkwi w empatii</p>
-            </blockquote>
             <p>
               Z czasem zrozumiałem, że
               <strong> prawdziwa siła tkwi w empatii </strong>- to klucz do
@@ -68,9 +68,10 @@ export default function AboutCard() {
               wymaga szybkiego myślenia i kreatywnego rozwiązywania problemów.
               Zdobyte umiejętności w ratownictwie medycznym okazały się być
               nieocenioną wartością również w świecie technologii. Z wielką
-              determinacją oddałem się nauce języków takich jak JavaScript,
-              frameworków jak React i Next.js a także eksploracji nowoczesnych
-              technologii webowych.
+              determinacją oddałem się nauce języków takich jak{' '}
+              <strong>JavaScript</strong>, frameworków jak{' '}
+              <strong>React</strong> i <strong>Next.js</strong> a także
+              eksploracji nowoczesnych technologii webowych.
             </p>
             <p>
               Jako freelancer, każdy projekt jest dla mnie nowym wyzwaniem i
@@ -92,7 +93,7 @@ export default function AboutCard() {
             <p>
               Moja najnowsza przygoda zawodowa rozpoczęła się wraz z dołączeniem
               do Zespołu Pomocy Humanitarno-Medycznej, jednostki działającej
-              przy Prezesie Rady Ministrów. Powołana w maju 2022 roku, ZPHM
+              przy Prezesie Rady Ministrów. ZPHM - powołany w maju 2022 roku,
               skupia się na zapewnieniu natychmiastowej i niezbędnej pomocy
               ratowniczo-medycznej oraz humanitarnej, szczególnie osobom
               znajdującym się w stanie nagłego zagrożenia zdrowotnego poza
