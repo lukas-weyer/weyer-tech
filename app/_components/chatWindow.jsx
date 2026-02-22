@@ -41,9 +41,9 @@ export default function ChatWindow() {
 
         <MotionDiv variants={item} transition={{ duration: 0.5 }}>
           <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-base-content/70">
-            Pasjonuję się ratownictwem medycznym i programowaniem -- to właśnie
-            tym zajmuję się na co dzień. Łączę te dwa światy, by tworzyć
-            rozwiązania, które pomagają ludziom.
+            Na co dzień jeżdżę karetką, a po godzinach koduję. Ratownictwo
+            medyczne i programowanie – dwie zupełnie różne rzeczy, a jednak obie
+            napędzają mnie tak samo.
           </p>
         </MotionDiv>
 
