@@ -67,23 +67,20 @@ export default function AboutCard() {
               Prawdziwa siła tkwi w empatii
             </p>
             <p>
-              Pracuję w Zespołach Ratownictwa Medycznego od 2008 roku. W
-              świecie, gdzie syreny i światła są codziennym tłem, droga którą
-              pokonałem nauczyła mnie nie tylko cennych umiejętności medycznych,
-              ale również jak być ostoją spokoju w chaosie.
+              W ratownictwie medycznym jestem od 2008 roku. Syreny, światła,
+              stres – to moja codzienność. Przez te lata nauczyłem się nie tylko
+              jak pomagać medycznie, ale przede wszystkim jak zachować spokój,
+              kiedy wokół panuje chaos.
             </p>
             <p>
-              Z czasem zrozumiałem, że{' '}
-              <strong>prawdziwa siła tkwi w empatii</strong> -- to klucz do
-              zrozumienia potrzeb pacjentów, co pozwala mi na podejmowanie
-              trafnych decyzji. Empatia, wrażliwość, determinacja to moje
-              narzędzia, którymi służę innym.
+              Najważniejsza lekcja?{' '}
+              <strong>Empatia</strong>. Bez niej nie da się dobrze ocenić, czego
+              tak naprawdę potrzebuje pacjent. To ona pomaga mi podejmować
+              właściwe decyzje, nawet pod presją czasu.
             </p>
             <p>
-              Praca w ratownictwie medycznym wykształciła we mnie umiejętność
-              pracy zespołowej, zarządzania stresem, a także podejmowania
-              szybkich decyzji. Te doświadczenia w znaczący sposób przyczyniły
-              się do mojego osobistego i zawodowego rozwoju.
+              Praca w karetce nauczyła mnie też działać w zespole i szybko
+              reagować – umiejętności, które przydają się nie tylko w medycynie.
             </p>
           </AboutSection>
 
@@ -96,25 +93,21 @@ export default function AboutCard() {
             reverse
           >
             <p>
-              Moja przygoda z programowaniem rozpoczęła się w nieoczekiwanych
-              okolicznościach -- podczas dyżurów w pogotowiu, kiedy między
-              jednym wyjazdem do zdarzenia a drugim znajdowałem chwilę na naukę
-              kodowania. Ta pasja do technologii rozwinęła się z czasem, stając
-              się moim drugim zawodem.
+              Zaczęło się dość nietypowo – kodować uczyłem się na dyżurach w
+              pogotowiu, w przerwach między wyjazdami. Z czasem to, co było
+              hobby, stało się moim drugim zawodem.
             </p>
             <p>
-              Świat programowania, podobnie jak medycyna ratunkowa, często
-              wymaga szybkiego myślenia i kreatywnego rozwiązywania problemów.
-              Z wielką determinacją oddałem się nauce języków takich jak{' '}
-              <strong>JavaScript</strong>, frameworków jak{' '}
-              <strong>React</strong> i <strong>Next.js</strong>, a także
-              eksploracji nowoczesnych technologii webowych.
+              Skupiam się głównie na{' '}
+              <strong>JavaScript</strong>, <strong>React</strong> i{' '}
+              <strong>Next.js</strong>. Programowanie zaskakująco dużo ma
+              wspólnego z ratownictwem – w obu trzeba szybko myśleć i
+              kreatywnie rozwiązywać problemy.
             </p>
             <p>
-              Jako freelancer, każdy projekt jest dla mnie nowym wyzwaniem i
-              okazją do rozwijania swoich umiejętności. Tworząc strony i
-              aplikacje internetowe, skupiam się na zapewnieniu intuicyjnych,
-              funkcjonalnych i estetycznych rozwiązań dla moich klientów.
+              Działam jako freelancer. Buduję strony i aplikacje internetowe,
+              a przy każdym projekcie staram się, żeby efekt był nie tylko ładny,
+              ale przede wszystkim użyteczny.
             </p>
           </AboutSection>
 
@@ -126,26 +119,21 @@ export default function AboutCard() {
             imageAlt="Łukasz Weyer - zespół pomocy humanitarno-medycznej"
           >
             <p>
-              Moja najnowsza przygoda zawodowa rozpoczęła się wraz z dołączeniem
-              do Zespołu Pomocy Humanitarno-Medycznej, jednostki działającej
-              przy Prezesie Rady Ministrów. ZPHM -- powołany w maju 2022 roku,
-              skupia się na zapewnieniu natychmiastowej i niezbędnej pomocy
-              ratowniczo-medycznej oraz humanitarnej, szczególnie osobom
-              znajdującym się w stanie nagłego zagrożenia zdrowotnego poza
-              granicami.
+              Od niedawna jestem też częścią Zespołu Pomocy
+              Humanitarno-Medycznej – jednostki przy Prezesie Rady Ministrów,
+              działającej od maja 2022 roku. ZPHM wysyła pomoc medyczną i
+              humanitarną tam, gdzie jest najbardziej potrzebna, szczególnie
+              poza granicami Polski.
             </p>
             <p>
-              W ramach ZPHM uczestniczę w akcjach ratunkowo-ewakuacyjnych
-              obywateli polskich będących ofiarami wypadków i innych zdarzeń
-              nagłych, a także wspieram działania ratunkowe podejmowane na
-              terytorium innych państw.
+              W praktyce oznacza to udział w akcjach ewakuacyjnych i
+              ratunkowych – pomagam Polakom, którzy za granicą mieli wypadek lub
+              znaleźli się w sytuacji zagrożenia. Bywam też przy działaniach
+              ratunkowych w innych krajach.
             </p>
             <p>
-              Doświadczenia zdobyte w ZPHM są dla mnie niezwykle cenne, zarówno
-              pod względem zawodowym, jak i osobistym. Praca ta pozwala mi
-              łączyć moje umiejętności ratownika medycznego z misją humanitarną,
-              przyczyniając się do ratowania życia i zdrowia ludzi na całym
-              świecie.
+              To praca, która łączy wszystko, co umiem jako ratownik, z czymś
+              większym. Daje ogromną satysfakcję, choć bywa wymagająca.
             </p>
           </AboutSection>
         </div>
