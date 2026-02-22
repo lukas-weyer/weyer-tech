@@ -1,5 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  ::selection {
+    @apply bg-rose-500/30;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-white/5 shadow-lg backdrop-blur-xl;
+  }
+
+  .glass-strong {
+    @apply border border-white/20 bg-white/10 shadow-xl backdrop-blur-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-rose-500 to-pink-400 bg-clip-text text-transparent;
+  }
+
+  .section-container {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+/* Mesh gradient background */
+.mesh-gradient {
+  background: radial-gradient(
+      ellipse at 20% 50%,
+      rgba(255, 45, 99, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(168, 85, 247, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 80%,
+      rgba(59, 130, 246, 0.08) 0%,
+      transparent 50%
+    );
+}
+
+[data-theme='dark'] .mesh-gradient {
+  background: radial-gradient(
+      ellipse at 20% 50%,
+      rgba(255, 45, 99, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(168, 85, 247, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 80%,
+      rgba(59, 130, 246, 0.1) 0%,
+      transparent 50%
+    );
+}
