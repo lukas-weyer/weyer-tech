@@ -8,18 +8,49 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        logo: ['"Russo One"', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        accent: {
+          DEFAULT: '#FF2D63',
+          light: '#FF5A85',
+          dark: '#E0224F',
+        },
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      fontFamily: {
-        logo: ['"Russo One", "sans-serif"'],
-      },
     },
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {
-    themes: ['winter', 'dark'],
+    themes: [
+      {
+        winter: {
+          ...require('daisyui/src/theming/themes')['winter'],
+          primary: '#FF2D63',
+          'primary-content': '#ffffff',
+          secondary: '#a855f7',
+          'base-100': '#ffffff',
+          'base-200': '#f8fafc',
+          'base-300': '#f1f5f9',
+        },
+      },
+      {
+        dark: {
+          ...require('daisyui/src/theming/themes')['dark'],
+          primary: '#FF2D63',
+          'primary-content': '#ffffff',
+          secondary: '#a855f7',
+          'base-100': '#0f172a',
+          'base-200': '#1e293b',
+          'base-300': '#334155',
+        },
+      },
+    ],
   },
 };

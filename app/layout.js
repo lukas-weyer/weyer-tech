@@ -2,28 +2,24 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Nav from './_components/nav';
 import Footer from './_components/footer';
-import { MotionDiv } from './_components/motionDiv';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'] });
 
 export const metadata = {
-  title: 'weyer.tech',
-  description: 'Łukasz Weyer - personal blog',
+  title: 'weyer.tech | Łukasz Weyer',
+  description:
+    'Łukasz Weyer - ratownik medyczny i web developer. Portfolio i blog osobisty.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pl-PL">
-      <body className={inter.className}>
-        <MotionDiv
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Nav />
-          {children}
-          <Footer />
-        </MotionDiv>
+      <body
+        className={`${inter.className} bg-base-100 text-base-content antialiased`}
+      >
+        <Nav />
+        {children}
+        <Footer />
       </body>
     </html>
   );

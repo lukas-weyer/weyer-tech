@@ -1,75 +1,74 @@
 import { MotionDiv } from './motionDiv';
-import Message from './message';
-import Writing from './writing';
+
+const item = {
+  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 20 },
+};
 
 const container = {
   visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 1,
-      delayChildren: 2,
-    },
+    transition: { staggerChildren: 0.15 },
   },
-  hidden: {
-    opacity: 0,
-  },
-};
-
-const writing = {
-  visible: {
-    opacity: 0,
-  },
-  hidden: {
-    opacity: 1,
-  },
-};
-
-const item = {
-  visible: {
-    display: 'block',
-    opacity: 1,
-    y: 0,
-  },
-  hidden: {
-    display: 'none',
-    opacity: 0,
-    y: 10,
-  },
+  hidden: {},
 };
 
 export default function ChatWindow() {
   return (
-    <MotionDiv
-      initial={{ y: 100 }}
-      animate={{ y: 0 }}
-      className="w-full max-w-3xl md:mb-12"
-    >
-      <div className="md:mockup-window md:bg-base-300 md:shadow-lg">
-        <div className="flex min-w-full flex-col justify-center p-4 md:bg-base-200 md:p-6">
-          <MotionDiv variants={container} initial="hidden" animate="visible">
-            <MotionDiv variants={item}>
-              <Message>Hej! Jestem Łukasz 👋🏻</Message>
-            </MotionDiv>
+    <section className="section-container py-24">
+      <MotionDiv
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        className="mx-auto max-w-3xl"
+      >
+        <MotionDiv
+          variants={item}
+          transition={{ duration: 0.5 }}
+          className="mb-12 text-center"
+        >
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
+            Kim jestem
+          </span>
+        </MotionDiv>
 
-            <MotionDiv variants={item}>
-              <Message>
-                Pasjonuję się ratownictwem medycznym 🚑 i programowaniem 👨🏻‍💻 – to
-                właśnie tym zajmuję się na co dzień!
-              </Message>
-            </MotionDiv>
+        <MotionDiv variants={item} transition={{ duration: 0.5 }}>
+          <h2 className="mb-6 text-center text-3xl font-bold tracking-tight md:text-4xl">
+            Hej! Jestem{' '}
+            <span className="gradient-text">Łukasz</span>
+          </h2>
+        </MotionDiv>
 
-            <MotionDiv variants={item}>
-              <Message>
-                Poniżej naszego chatu znajdziesz więcej informacji o mnie...
-              </Message>
-            </MotionDiv>
+        <MotionDiv variants={item} transition={{ duration: 0.5 }}>
+          <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-base-content/70">
+            Pasjonuję się ratownictwem medycznym i programowaniem -- to właśnie
+            tym zajmuję się na co dzień. Łączę te dwa światy, by tworzyć
+            rozwiązania, które pomagają ludziom.
+          </p>
+        </MotionDiv>
 
-            <MotionDiv variants={writing}>
-              <Writing />
-            </MotionDiv>
-          </MotionDiv>
-        </div>
-      </div>
-    </MotionDiv>
+        <MotionDiv
+          variants={item}
+          transition={{ duration: 0.5 }}
+          className="mt-12 grid gap-4 sm:grid-cols-3"
+        >
+          <div className="rounded-2xl border border-base-content/5 bg-base-200/50 p-6 text-center transition-colors hover:border-primary/20">
+            <div className="mb-3 text-3xl">🚑</div>
+            <h3 className="mb-1 font-semibold">Ratownik medyczny</h3>
+            <p className="text-sm text-base-content/50">Od 2008 roku</p>
+          </div>
+          <div className="rounded-2xl border border-base-content/5 bg-base-200/50 p-6 text-center transition-colors hover:border-primary/20">
+            <div className="mb-3 text-3xl">👨🏻‍💻</div>
+            <h3 className="mb-1 font-semibold">Web developer</h3>
+            <p className="text-sm text-base-content/50">React & Next.js</p>
+          </div>
+          <div className="rounded-2xl border border-base-content/5 bg-base-200/50 p-6 text-center transition-colors hover:border-primary/20">
+            <div className="mb-3 text-3xl">🌍</div>
+            <h3 className="mb-1 font-semibold">ZPHM</h3>
+            <p className="text-sm text-base-content/50">Pomoc humanitarna</p>
+          </div>
+        </MotionDiv>
+      </MotionDiv>
+    </section>
   );
 }
