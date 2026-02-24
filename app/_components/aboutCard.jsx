@@ -63,9 +63,6 @@ export default function AboutCard() {
             imageSrc="/lukasz_weyer_zrm.jpeg"
             imageAlt="Łukasz Weyer - ratownictwo medyczne"
           >
-            <p className="border-l-2 border-primary/30 pl-4 text-lg font-medium italic text-base-content/80">
-              Prawdziwa siła tkwi w empatii
-            </p>
             <p>
               W ratownictwie medycznym jestem od 2008 roku. Syreny, światła,
               stres – to moja codzienność. Przez te lata nauczyłem się nie tylko
