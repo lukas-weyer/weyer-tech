@@ -69,18 +69,18 @@ export default function AboutCard() {
             <p>
               W ratownictwie medycznym jestem od 2008 roku. Syreny, światła,
               stres – to moja codzienność. Przez te lata nauczyłem się nie tylko
-              jak pomagać medycznie, ale przede wszystkim jak zachować spokój,
-              kiedy wokół panuje chaos.
+              udzielać pomocy, ale przede wszystkim zachowywać spokój, kiedy
+              wokół panuje chaos.
             </p>
             <p>
               Najważniejsza lekcja?{' '}
-              <strong>Empatia</strong>. Bez niej nie da się dobrze ocenić, czego
-              tak naprawdę potrzebuje pacjent. To ona pomaga mi podejmować
-              właściwe decyzje, nawet pod presją czasu.
+              <strong>Empatia</strong>. Bez niej trudno zrozumieć, czego
+              naprawdę potrzebuje pacjent. To dzięki niej podejmuję właściwe
+              decyzje, nawet pod presją czasu.
             </p>
             <p>
-              Praca w karetce nauczyła mnie też działać w zespole i szybko
-              reagować – umiejętności, które przydają się nie tylko w medycynie.
+              Praca w karetce nauczyła mnie też pracy zespołowej i szybkiego
+              reagowania – to rzeczy, które przydają się nie tylko w medycynie.
             </p>
           </AboutSection>
 
@@ -100,14 +100,14 @@ export default function AboutCard() {
             <p>
               Skupiam się głównie na{' '}
               <strong>JavaScript</strong>, <strong>React</strong> i{' '}
-              <strong>Next.js</strong>. Programowanie zaskakująco dużo ma
+              <strong>Next.js</strong>. Programowanie ma zaskakująco dużo
               wspólnego z ratownictwem – w obu trzeba szybko myśleć i
               kreatywnie rozwiązywać problemy.
             </p>
             <p>
               Działam jako freelancer. Buduję strony i aplikacje internetowe,
-              a przy każdym projekcie staram się, żeby efekt był nie tylko ładny,
-              ale przede wszystkim użyteczny.
+              a w każdym projekcie zależy mi na tym, żeby efekt był nie tylko
+              ładny, ale przede wszystkim funkcjonalny.
             </p>
           </AboutSection>
 
@@ -128,12 +128,12 @@ export default function AboutCard() {
             <p>
               W praktyce oznacza to udział w akcjach ewakuacyjnych i
               ratunkowych – pomagam Polakom, którzy za granicą mieli wypadek lub
-              znaleźli się w sytuacji zagrożenia. Bywam też przy działaniach
+              znaleźli się w sytuacji zagrożenia. Uczestniczę też w misjach
               ratunkowych w innych krajach.
             </p>
             <p>
-              To praca, która łączy wszystko, co umiem jako ratownik, z czymś
-              większym. Daje ogromną satysfakcję, choć bywa wymagająca.
+              To praca, w której mogę wykorzystać wszystko, czego nauczyłem się
+              jako ratownik. Bywa wymagająca, ale daje ogromną satysfakcję.
             </p>
           </AboutSection>
         </div>
