@@ -30,17 +30,6 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        winter: {
-          ...require('daisyui/src/theming/themes')['winter'],
-          primary: '#FF2D63',
-          'primary-content': '#ffffff',
-          secondary: '#a855f7',
-          'base-100': '#ffffff',
-          'base-200': '#f8fafc',
-          'base-300': '#f1f5f9',
-        },
-      },
-      {
         dark: {
           ...require('daisyui/src/theming/themes')['dark'],
           primary: '#FF2D63',

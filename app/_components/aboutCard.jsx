@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { MotionDiv } from './motionDiv';
 
 const fadeUp = {
@@ -6,29 +5,15 @@ const fadeUp = {
   hidden: { opacity: 0, y: 30 },
 };
 
-function AboutSection({ title, imageSrc, imageAlt, children, reverse }) {
+function AboutSection({ title, children }) {
   return (
     <MotionDiv
       variants={fadeUp}
       transition={{ duration: 0.6 }}
-      className={`flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-12 ${reverse ? 'lg:flex-row-reverse' : ''}`}
     >
-      <div className="shrink-0">
-        <div className="overflow-hidden rounded-2xl border border-base-content/5 shadow-lg">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            width={280}
-            height={280}
-            className="h-56 w-56 object-cover sm:h-64 sm:w-64"
-          />
-        </div>
-      </div>
-      <div className="flex-1">
-        <h3 className="mb-4 text-2xl font-bold tracking-tight">{title}</h3>
-        <div className="space-y-4 text-base leading-relaxed text-base-content/70">
-          {children}
-        </div>
+      <h3 className="mb-4 text-2xl font-bold tracking-tight">{title}</h3>
+      <div className="space-y-4 text-base leading-relaxed text-base-content/70">
+        {children}
       </div>
     </MotionDiv>
   );
@@ -57,41 +42,29 @@ export default function AboutCard() {
           </h2>
         </MotionDiv>
 
-        <div className="space-y-20">
-          <AboutSection
-            title="Ratownictwo medyczne"
-            imageSrc="/lukasz_weyer_zrm.jpeg"
-            imageAlt="Łukasz Weyer - ratownictwo medyczne"
-          >
-            <p className="border-l-2 border-primary/30 pl-4 text-lg font-medium italic text-base-content/80">
-              Prawdziwa siła tkwi w empatii
-            </p>
+        <div className="mx-auto max-w-2xl space-y-20">
+          <AboutSection title="Ratownictwo medyczne">
             <p>
               W ratownictwie medycznym jestem od 2008 roku. Syreny, światła,
               stres – to moja codzienność. Przez te lata nauczyłem się nie tylko
-              jak pomagać medycznie, ale przede wszystkim jak zachować spokój,
-              kiedy wokół panuje chaos.
+              udzielać pomocy, ale przede wszystkim zachowywać spokój, kiedy
+              wokół panuje chaos.
             </p>
             <p>
               Najważniejsza lekcja?{' '}
-              <strong>Empatia</strong>. Bez niej nie da się dobrze ocenić, czego
-              tak naprawdę potrzebuje pacjent. To ona pomaga mi podejmować
-              właściwe decyzje, nawet pod presją czasu.
+              <strong>Empatia</strong>. Bez niej trudno zrozumieć, czego
+              naprawdę potrzebuje pacjent. To dzięki niej podejmuję właściwe
+              decyzje, nawet pod presją czasu.
             </p>
             <p>
-              Praca w karetce nauczyła mnie też działać w zespole i szybko
-              reagować – umiejętności, które przydają się nie tylko w medycynie.
+              Praca w karetce nauczyła mnie też pracy zespołowej i szybkiego
+              reagowania – to rzeczy, które przydają się nie tylko w medycynie.
             </p>
           </AboutSection>
 
           <div className="mx-auto h-px w-24 bg-base-content/10" />
 
-          <AboutSection
-            title="Programowanie"
-            imageSrc="/weyer-tech.png"
-            imageAlt="weyer.tech - logo"
-            reverse
-          >
+          <AboutSection title="Programowanie">
             <p>
               Zaczęło się dość nietypowo – kodować uczyłem się na dyżurach w
               pogotowiu, w przerwach między wyjazdami. Z czasem to, co było
@@ -100,24 +73,20 @@ export default function AboutCard() {
             <p>
               Skupiam się głównie na{' '}
               <strong>JavaScript</strong>, <strong>React</strong> i{' '}
-              <strong>Next.js</strong>. Programowanie zaskakująco dużo ma
+              <strong>Next.js</strong>. Programowanie ma zaskakująco dużo
               wspólnego z ratownictwem – w obu trzeba szybko myśleć i
               kreatywnie rozwiązywać problemy.
             </p>
             <p>
               Działam jako freelancer. Buduję strony i aplikacje internetowe,
-              a przy każdym projekcie staram się, żeby efekt był nie tylko ładny,
-              ale przede wszystkim użyteczny.
+              a w każdym projekcie zależy mi na tym, żeby efekt był nie tylko
+              ładny, ale przede wszystkim funkcjonalny.
             </p>
           </AboutSection>
 
           <div className="mx-auto h-px w-24 bg-base-content/10" />
 
-          <AboutSection
-            title="Zespół Pomocy Humanitarno-Medycznej"
-            imageSrc="/lukasz_weyer_zphm.jpeg"
-            imageAlt="Łukasz Weyer - zespół pomocy humanitarno-medycznej"
-          >
+          <AboutSection title="Zespół Pomocy Humanitarno-Medycznej">
             <p>
               Od niedawna jestem też częścią Zespołu Pomocy
               Humanitarno-Medycznej – jednostki przy Prezesie Rady Ministrów,
@@ -128,12 +97,12 @@ export default function AboutCard() {
             <p>
               W praktyce oznacza to udział w akcjach ewakuacyjnych i
               ratunkowych – pomagam Polakom, którzy za granicą mieli wypadek lub
-              znaleźli się w sytuacji zagrożenia. Bywam też przy działaniach
+              znaleźli się w sytuacji zagrożenia. Uczestniczę też w misjach
               ratunkowych w innych krajach.
             </p>
             <p>
-              To praca, która łączy wszystko, co umiem jako ratownik, z czymś
-              większym. Daje ogromną satysfakcję, choć bywa wymagająca.
+              To praca, w której mogę wykorzystać wszystko, czego nauczyłem się
+              jako ratownik. Bywa wymagająca, ale daje ogromną satysfakcję.
             </p>
           </AboutSection>
         </div>

@@ -42,8 +42,8 @@ export default function ChatWindow() {
         <MotionDiv variants={item} transition={{ duration: 0.5 }}>
           <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-base-content/70">
             Na co dzień jeżdżę karetką, a po godzinach koduję. Ratownictwo
-            medyczne i programowanie – dwie zupełnie różne rzeczy, a jednak obie
-            napędzają mnie tak samo.
+            medyczne i programowanie – niby dwa różne światy, ale w obu
+            czuję się jak u siebie.
           </p>
         </MotionDiv>
 

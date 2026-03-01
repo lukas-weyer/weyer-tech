@@ -1,5 +1,4 @@
 import Logo from './logo';
-import ThemeControler from './themeController';
 import Socjals from './socjals';
 
 export default function Nav() {
@@ -13,13 +12,7 @@ export default function Nav() {
           <Logo className="h-auto w-7" />
           <span className="font-logo text-sm tracking-wide">weyer.tech</span>
         </a>
-        <div className="flex items-center gap-4">
-          <div className="hidden sm:block">
-            <Socjals />
-          </div>
-          <div className="h-5 w-px bg-base-content/10" />
-          <ThemeControler />
-        </div>
+        <Socjals />
       </div>
     </nav>
   );
