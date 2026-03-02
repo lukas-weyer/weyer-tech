@@ -42,7 +42,7 @@ export default function AboutCard() {
           </h2>
         </MotionDiv>
 
-        <div className="mx-auto max-w-2xl space-y-20">
+        <MotionDiv variants={stagger} className="mx-auto max-w-2xl space-y-20">
           <AboutSection title="Ratownictwo medyczne">
             <p>
               W ratownictwie medycznym jestem od 2008 roku. Syreny, światła,
@@ -105,7 +105,7 @@ export default function AboutCard() {
               jako ratownik. Bywa wymagająca, ale daje ogromną satysfakcję.
             </p>
           </AboutSection>
-        </div>
+        </MotionDiv>
       </MotionDiv>
     </section>
   );

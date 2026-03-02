@@ -51,8 +51,8 @@ export default function Hero() {
         <div className="overflow-hidden rounded-full border-2 border-base-content/10 shadow-xl">
           <Image
             src="/lukasz_weyer.jpeg"
-            width={120}
-            height={120}
+            width={128}
+            height={128}
             alt="Łukasz Weyer"
             priority
             className="h-28 w-28 object-cover md:h-32 md:w-32"

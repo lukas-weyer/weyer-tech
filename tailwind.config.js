@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        logo: ['"Russo One"', 'sans-serif'],
+        logo: ['var(--font-russo-one)', 'sans-serif'],
         sans: ['Inter', 'sans-serif'],
       },
       colors: {
