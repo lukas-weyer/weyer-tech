@@ -18,9 +18,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pl" data-theme="dark">
+    <html lang="pl">
       <body
-        className={`${inter.className} ${russoOne.variable} bg-base-100 text-base-content antialiased`}
+        className={`${inter.className} ${russoOne.variable} bg-[#0a0a12] text-white antialiased`}
       >
         <Nav />
         {children}

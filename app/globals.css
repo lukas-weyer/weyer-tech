@@ -1,68 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply antialiased;
-  }
-
-  ::selection {
-    @apply bg-rose-500/30;
-  }
+@theme {
+  --font-logo: var(--font-russo-one), sans-serif;
 }
 
-@layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent;
-  }
-
-  .section-container {
-    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
-  }
-
-  .ghost-number {
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0.02)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .section-divider {
-    @apply h-px w-full;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.06),
-      transparent
-    );
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-@layer utilities {
-  .animate-float {
-    animation: float 8s ease-in-out infinite;
-  }
+::selection {
+  @apply bg-rose-500/30;
+}
 
-  .animate-float-delayed {
-    animation: float 8s ease-in-out 3s infinite;
-  }
+.gradient-text {
+  @apply bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent;
+}
 
-  .animate-float-slow {
-    animation: float 6s ease-in-out 1.5s infinite;
-  }
+.section-container {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
 
-  .animate-bounce-slow {
-    animation: bounce-slow 2s ease-in-out infinite;
-  }
+.ghost-number {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-divider {
+  @apply h-px w-full;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
+}
+
+@utility animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@utility animate-float-delayed {
+  animation: float 8s ease-in-out 3s infinite;
+}
+
+@utility animate-float-slow {
+  animation: float 6s ease-in-out 1.5s infinite;
+}
+
+@utility animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
 }
 
 @keyframes float {

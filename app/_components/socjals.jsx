@@ -26,7 +26,7 @@ export default function Socjals() {
           target={label === 'Email' ? undefined : '_blank'}
           rel={label === 'Email' ? undefined : 'noopener noreferrer'}
           aria-label={label}
-          className="flex h-9 w-9 items-center justify-center rounded-full text-base-content/50 transition-all duration-200 hover:bg-white/10 hover:text-white"
+          className="flex h-9 w-9 items-center justify-center rounded-full text-white/50 transition-all duration-200 hover:bg-white/10 hover:text-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
