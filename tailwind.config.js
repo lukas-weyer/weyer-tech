@@ -12,18 +12,6 @@ module.exports = {
         logo: ['var(--font-russo-one)', 'sans-serif'],
         sans: ['Inter', 'sans-serif'],
       },
-      colors: {
-        accent: {
-          DEFAULT: '#FF2D63',
-          light: '#FF5A85',
-          dark: '#E0224F',
-        },
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
     },
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
@@ -35,9 +23,10 @@ module.exports = {
           primary: '#FF2D63',
           'primary-content': '#ffffff',
           secondary: '#a855f7',
-          'base-100': '#0f172a',
-          'base-200': '#1e293b',
-          'base-300': '#334155',
+          accent: '#22d3ee',
+          'base-100': '#0a0a12',
+          'base-200': '#12121e',
+          'base-300': '#1e1e2e',
         },
       },
     ],
