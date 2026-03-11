@@ -11,9 +11,9 @@ const russoOne = Russo_One({
 });
 
 export const metadata = {
-  title: 'weyer.tech | Łukasz Weyer',
+  title: 'weyer.tech | Portfolio',
   description:
-    'Łukasz Weyer - ratownik medyczny i web developer. Portfolio i blog osobisty.',
+    'Buduję strony i aplikacje. Portfolio projektów webowych — Łukasz Weyer.',
 };
 
 export default function RootLayout({ children }) {
