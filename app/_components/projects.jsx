@@ -16,7 +16,7 @@ const projects = [
     title: 'ivobeauty',
     description:
       'Strona internetowa salonu kosmetycznego ivobeauty.co.uk. Elegancki design dopasowany do branży beauty.',
-    tech: ['JavaScript', 'Next.js'],
+    tech: ['TypeScript', 'Astro'],
     url: 'https://ivobeauty.co.uk',
     img: '/projects/proj-ivobeauty.webp',
     alt: 'ivobeauty — salon kosmetyczny',
