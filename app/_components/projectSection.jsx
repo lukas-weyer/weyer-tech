@@ -40,10 +40,10 @@ export default function ProjectSection({ project, index }) {
             <MotionDiv
               variants={isReversed ? fadeRight : fadeLeft}
               transition={{ duration: 0.6 }}
-              className={`relative ${isReversed ? 'lg:[direction:ltr]' : ''}`}
+              className={`relative order-last lg:order-none ${isReversed ? 'lg:[direction:ltr]' : ''}`}
             >
               {/* Big number */}
-              <span className="pointer-events-none absolute -left-2 -top-5 select-none text-[120px] font-black leading-none max-lg:text-[80px]" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span className="ghost-number pointer-events-none absolute -left-2 -top-5 select-none text-[120px] font-black leading-none max-lg:text-[80px]">
                 {number}
               </span>
 
