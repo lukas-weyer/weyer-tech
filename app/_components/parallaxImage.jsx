@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
@@ -12,10 +12,26 @@ export default function ParallaxImage({ src, alt, width, height, placeholder }) 
   });
   const y = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
 
+  const handleMouseMove = useCallback((e) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const yPos = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.transform = `perspective(1000px) rotateY(${x * 6}deg) rotateX(${-yPos * 6}deg)`;
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    const el = ref.current;
+    if (el) el.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+  }, []);
+
   return (
     <div
       ref={ref}
-      className="relative overflow-hidden rounded-[20px] border border-white/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative overflow-hidden rounded-[20px] border border-white/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition-transform duration-200 ease-out"
     >
       <motion.div style={{ y }}>
         {src ? (

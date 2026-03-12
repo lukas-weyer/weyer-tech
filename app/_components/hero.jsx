@@ -61,7 +61,10 @@ export default function Hero() {
         transition={{ delay: 1.2, duration: 0.6 }}
         className="absolute bottom-10"
       >
-        <div className="flex flex-col items-center gap-2">
+        <a
+          href="#projects"
+          className="flex flex-col items-center gap-2 transition-opacity hover:opacity-60"
+        >
           <span className="text-[10px] font-medium uppercase tracking-[3px] text-white/20">
             scroll
           </span>
@@ -78,7 +81,7 @@ export default function Hero() {
               <path d="m6 9 6 6 6-6" />
             </svg>
           </div>
-        </div>
+        </a>
       </MotionDiv>
     </header>
   );

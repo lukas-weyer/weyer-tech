@@ -38,7 +38,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div>
+    <div id="projects">
       {projects.map((project, index) => (
         <ProjectSection key={project.title} project={project} index={index} />
       ))}
