@@ -15,6 +15,7 @@ export default function Survey({ config }) {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState(null);
   const [hasProgress, setHasProgress] = useState(false);
+  const [initialized, setInitialized] = useState(false);
 
   // --- Computed values ---
 
@@ -64,18 +65,7 @@ export default function Survey({ config }) {
 
   // --- localStorage persistence ---
 
-  useEffect(() => {
-    if (screen === 'summary' || submitted) return;
-    const data = {
-      answers,
-      currentSection,
-      currentQuestion,
-      screen,
-      timestamp: Date.now(),
-    };
-    localStorage.setItem(`survey_${config.token}`, JSON.stringify(data));
-  }, [answers, currentSection, currentQuestion, screen, submitted, config.token]);
-
+  // Restore on mount (runs first)
   useEffect(() => {
     try {
       const saved = localStorage.getItem(`survey_${config.token}`);
@@ -89,7 +79,21 @@ export default function Survey({ config }) {
         }
       }
     } catch {}
+    setInitialized(true);
   }, [config.token]);
+
+  // Save on every change (only after restore completes)
+  useEffect(() => {
+    if (!initialized || screen === 'summary' || submitted) return;
+    const data = {
+      answers,
+      currentSection,
+      currentQuestion,
+      screen,
+      timestamp: Date.now(),
+    };
+    localStorage.setItem(`survey_${config.token}`, JSON.stringify(data));
+  }, [answers, currentSection, currentQuestion, screen, submitted, config.token, initialized]);
 
   // --- Navigation ---
 

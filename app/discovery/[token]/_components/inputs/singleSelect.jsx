@@ -13,13 +13,13 @@ export default function SingleSelect({ question, value, onChange }) {
             onClick={() => onChange(option)}
             className={`flex items-center gap-3 rounded-xl border py-4 px-5 cursor-pointer transition-all duration-200 text-left ${
               selected
-                ? 'border-rose-500/30 bg-rose-500/[0.05]'
+                ? 'border-purple-500/30 bg-purple-500/[0.05]'
                 : 'border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.02]'
             }`}
           >
             <span
               className={`h-2 w-2 shrink-0 rounded-full transition-all duration-200 ${
-                selected ? 'bg-rose-500' : 'bg-transparent'
+                selected ? 'bg-purple-500' : 'bg-transparent'
               }`}
             />
             <span

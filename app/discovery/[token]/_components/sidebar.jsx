@@ -1,5 +1,7 @@
 'use client';
 
+import Logo from '@/app/_components/logo';
+
 export default function Sidebar({
   config,
   visibleSections,
@@ -32,7 +34,7 @@ export default function Sidebar({
 
   const handleClick = (section) => {
     const visibleIndex = visibleSections.findIndex((s) => s.id === section.id);
-    if (completedSections.has(section.id) && visibleIndex !== -1) {
+    if (visibleIndex !== -1 && visibleIndex <= currentSectionIndex) {
       onSectionClick(visibleIndex);
     }
   };
@@ -41,6 +43,16 @@ export default function Sidebar({
     <>
       {/* Desktop sidebar */}
       <aside className="hidden lg:flex lg:flex-col w-[260px] h-screen sticky top-0 bg-[#0a0a12] border-r border-white/[0.06] px-5 py-8 text-white">
+        {/* Logo */}
+        <div className="mb-6 pb-5 border-b border-white/[0.06]">
+          <a href="/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 transition-opacity hover:opacity-70">
+            <Logo className="h-auto w-6" />
+            <span className="font-logo text-sm tracking-wide">
+              weyer<span className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-transparent">.tech</span>
+            </span>
+          </a>
+        </div>
+
         {/* Top section */}
         <div className="mb-10">
           <p className="text-[11px] uppercase tracking-[3px] opacity-30">
@@ -132,11 +144,14 @@ export default function Sidebar({
       {/* Mobile top bar */}
       <div className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-[#0a0a12]/90 backdrop-blur-xl border-b border-white/[0.06] px-4 py-3">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-medium text-white">
-            {currentSection?.title}
-          </span>
+          <a href="/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 transition-opacity hover:opacity-70">
+            <Logo className="h-auto w-5" />
+            <span className="font-logo text-xs tracking-wide">
+              weyer<span className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-transparent">.tech</span>
+            </span>
+          </a>
           <span className="text-[11px] opacity-30 text-white">
-            pytanie {answeredCount}/{totalQuestions}
+            {currentSection?.title} · {answeredCount}/{totalQuestions}
           </span>
         </div>
         <div className="mt-2 h-[2px] rounded-full bg-white/[0.06]">

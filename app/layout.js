@@ -1,9 +1,6 @@
 import { Inter, Russo_One } from 'next/font/google';
 import './globals.css';
-import Nav from './_components/nav';
-import Footer from './_components/footer';
-import CursorGlow from './_components/cursorGlow';
-import Preloader from './_components/preloader';
+import LayoutShell from './_components/layoutShell';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'] });
 const russoOne = Russo_One({
@@ -49,11 +46,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} ${russoOne.variable} bg-[#0a0a12] text-white antialiased`}
       >
-        <Preloader />
-        <CursorGlow />
-        <Nav />
-        {children}
-        <Footer />
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   );

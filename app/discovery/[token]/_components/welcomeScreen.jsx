@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Logo from '@/app/_components/logo';
 
 export default function WelcomeScreen({
   config,
@@ -31,6 +32,13 @@ export default function WelcomeScreen({
         transition={{ duration: 0.6 }}
         className="max-w-[480px] text-center"
       >
+        <a href="/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 transition-opacity hover:opacity-70 mb-8">
+          <Logo className="h-auto w-7" />
+          <span className="font-logo text-sm tracking-wide">
+            weyer<span className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-transparent">.tech</span>
+          </span>
+        </a>
+
         <p className="text-[11px] uppercase tracking-[4px] opacity-30">
           Discovery
         </p>

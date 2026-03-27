@@ -15,8 +15,6 @@ export default function MultiSelect({ question, value, onChange }) {
     <div className="flex flex-col gap-2">
       {(question.options || []).map((option, index) => {
         const isSelected = selected.includes(option);
-        const useRose = index % 2 === 0;
-
         return (
           <button
             key={option}
@@ -24,9 +22,7 @@ export default function MultiSelect({ question, value, onChange }) {
             onClick={() => toggle(option)}
             className={`flex items-center gap-3 rounded-xl border py-4 px-5 cursor-pointer transition-all duration-200 text-left ${
               isSelected
-                ? useRose
-                  ? 'border-rose-500/30 bg-rose-500/[0.05]'
-                  : 'border-purple-500/30 bg-purple-500/[0.05]'
+                ? 'border-purple-500/30 bg-purple-500/[0.05]'
                 : 'border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.02]'
             }`}
           >

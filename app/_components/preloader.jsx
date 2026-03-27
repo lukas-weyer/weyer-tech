@@ -4,12 +4,21 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Preloader() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return !sessionStorage.getItem('preloader_shown');
+    }
+    return true;
+  });
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1400);
+    if (!loading) return;
+    const timer = setTimeout(() => {
+      setLoading(false);
+      sessionStorage.setItem('preloader_shown', '1');
+    }, 1400);
     return () => clearTimeout(timer);
-  }, []);
+  }, [loading]);
 
   return (
     <AnimatePresence>

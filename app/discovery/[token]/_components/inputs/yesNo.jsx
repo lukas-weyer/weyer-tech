@@ -9,7 +9,7 @@ export default function YesNo({ question, value, onChange }) {
           onClick={() => onChange(true)}
           className={`flex-1 rounded-xl py-4 text-center cursor-pointer transition-all duration-200 border text-[15px] ${
             value === true
-              ? 'border-rose-500/30 bg-rose-500/[0.05] text-white'
+              ? 'border-purple-500/30 bg-purple-500/[0.05] text-white'
               : 'border-white/[0.08] bg-white/[0.02] text-white/50'
           }`}
         >

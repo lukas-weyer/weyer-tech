@@ -47,7 +47,7 @@ export default function QuestionScreen({
         </p>
 
         <h2 className="text-[26px] font-semibold leading-snug mb-2.5 text-white">
-          {question.title}
+          {question.label}
         </h2>
 
         {question.description && (
