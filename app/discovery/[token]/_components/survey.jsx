@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import WelcomeScreen from './welcomeScreen';
 import Sidebar from './sidebar';
 import QuestionScreen from './questionScreen';
@@ -92,7 +93,7 @@ export default function Survey({ config }) {
 
   // --- Navigation ---
 
-  function goNext() {
+  const goNext = useCallback(() => {
     if (isLastQuestion) {
       handleSubmit();
       return;
@@ -103,9 +104,9 @@ export default function Survey({ config }) {
       setCurrentSection((s) => s + 1);
       setCurrentQuestion(0);
     }
-  }
+  }, [isLastQuestion, currentQuestion, currentSectionData]);
 
-  function goPrev() {
+  const goPrev = useCallback(() => {
     if (isFirstQuestion) return;
     if (currentQuestion > 0) {
       setCurrentQuestion((q) => q - 1);
@@ -114,20 +115,63 @@ export default function Survey({ config }) {
       setCurrentSection((s) => s - 1);
       setCurrentQuestion(prevSection.questions.length - 1);
     }
-  }
+  }, [isFirstQuestion, currentQuestion, visibleSections, currentSection]);
 
   function goToSection(index) {
     setCurrentSection(index);
     setCurrentQuestion(0);
   }
 
-  function handleAnswer(value) {
+  const handleAnswer = useCallback((value) => {
     setAnswers((prev) => ({ ...prev, [currentQuestionData.id]: value }));
-  }
+  }, [currentQuestionData]);
 
   function handleStart() {
     setScreen('survey');
   }
+
+  // --- Keyboard navigation ---
+
+  useEffect(() => {
+    if (screen !== 'survey') return;
+
+    function handleKeyDown(e) {
+      // Don't intercept if user is typing in an input/textarea
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          // Allow Enter in textarea (it adds newline), but in text input go next
+          if (e.target.tagName === 'INPUT') {
+            e.preventDefault();
+            goNext();
+          }
+        }
+        return;
+      }
+
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        goNext();
+      } else if (e.key === 'Backspace' || (e.key === 'Enter' && e.shiftKey)) {
+        e.preventDefault();
+        goPrev();
+      }
+
+      // Number keys for singleSelect, scale, yesNo
+      const num = parseInt(e.key);
+      if (!isNaN(num) && currentQuestionData) {
+        if (currentQuestionData.type === 'singleSelect' && num >= 1 && num <= currentQuestionData.options.length) {
+          handleAnswer(currentQuestionData.options[num - 1]);
+        } else if (currentQuestionData.type === 'scale' && num >= 1 && num <= 5) {
+          handleAnswer(num);
+        } else if (currentQuestionData.type === 'yesNo' && (num === 1 || num === 2)) {
+          handleAnswer(num === 1);
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [screen, currentQuestionData, goNext, goPrev, handleAnswer]);
 
   // --- Submit (Netlify Forms) ---
 
@@ -194,93 +238,140 @@ export default function Survey({ config }) {
         <textarea name="answers" />
       </form>
 
-      {screen === 'welcome' && (
-        <WelcomeScreen
-          config={config}
-          totalQuestions={totalQuestions}
-          sectionCount={visibleSections.length}
-          onStart={handleStart}
-          hasProgress={hasProgress}
-        />
-      )}
-
-      {screen === 'survey' && (
-        <div className="flex min-h-screen">
-          <Sidebar
-            config={config}
-            visibleSections={visibleSections}
-            currentSectionIndex={currentSection}
-            completedSections={completedSections}
-            totalQuestions={totalQuestions}
-            answeredCount={answeredCount}
-            onSectionClick={goToSection}
-          />
-
-          <main className="flex-1 flex flex-col items-center justify-center px-6 lg:px-16 py-20 lg:py-12 relative">
-            {/* Subtle glow orb */}
-            <div
-              className="pointer-events-none absolute top-[20%] right-[20%] h-[300px] w-[300px]"
-              style={{
-                background:
-                  'radial-gradient(circle, rgba(255,45,99,0.06) 0%, transparent 70%)',
-              }}
-            />
-
-            <QuestionScreen
-              question={currentQuestionData}
-              questionIndex={flatQuestions.indexOf(currentQuestionData)}
-              totalQuestions={totalQuestions}
-              value={answers[currentQuestionData?.id]}
-              onChange={handleAnswer}
-            />
-
-            {/* Navigation */}
-            <div className="mt-10 flex w-full max-w-[520px] items-center justify-between">
-              {!isFirstQuestion ? (
-                <button
-                  onClick={goPrev}
-                  className="text-[13px] opacity-25 transition-opacity duration-200 hover:opacity-50 cursor-pointer"
-                >
-                  ← Wstecz
-                </button>
-              ) : (
-                <div />
-              )}
-              <button
-                onClick={goNext}
-                className="cursor-pointer rounded-full bg-gradient-to-r from-rose-500 to-purple-500 px-8 py-3 text-[13px] font-semibold shadow-[0_0_30px_rgba(255,45,99,0.2)] transition-all duration-200 hover:shadow-[0_0_40px_rgba(255,45,99,0.3)]"
-              >
-                {isLastQuestion ? 'Podsumuj i wyślij' : 'Dalej →'}
-              </button>
-            </div>
-
-            {submitError && (
-              <p className="mt-4 text-sm text-rose-400">{submitError}</p>
-            )}
-          </main>
-        </div>
-      )}
-
-      {screen === 'summary' && (
-        <div className="flex min-h-screen">
-          <Sidebar
-            config={config}
-            visibleSections={visibleSections}
-            currentSectionIndex={-1}
-            completedSections={new Set(visibleSections.map((s) => s.id))}
-            totalQuestions={totalQuestions}
-            answeredCount={totalQuestions}
-            onSectionClick={() => {}}
-          />
-          <main className="flex-1 flex flex-col items-center px-6 lg:px-16 py-20 lg:py-12 overflow-y-auto">
-            <SummaryScreen
+      <AnimatePresence mode="wait">
+        {screen === 'welcome' && (
+          <motion.div
+            key="welcome"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <WelcomeScreen
               config={config}
-              answers={answers}
-              visibleSections={visibleSections}
+              totalQuestions={totalQuestions}
+              sectionCount={visibleSections.length}
+              onStart={handleStart}
+              hasProgress={hasProgress}
             />
-          </main>
-        </div>
-      )}
+          </motion.div>
+        )}
+
+        {screen === 'survey' && (
+          <motion.div
+            key="survey"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="flex min-h-screen"
+          >
+            <Sidebar
+              config={config}
+              visibleSections={visibleSections}
+              currentSectionIndex={currentSection}
+              completedSections={completedSections}
+              totalQuestions={totalQuestions}
+              answeredCount={answeredCount}
+              onSectionClick={goToSection}
+            />
+
+            <main className="flex-1 flex flex-col items-center justify-center px-6 lg:px-16 pt-24 pb-20 lg:pt-12 lg:pb-12 relative">
+              {/* Subtle glow orb */}
+              <div
+                className="pointer-events-none absolute top-[20%] right-[20%] h-[300px] w-[300px]"
+                style={{
+                  background:
+                    'radial-gradient(circle, rgba(255,45,99,0.06) 0%, transparent 70%)',
+                }}
+              />
+
+              {/* Second subtle glow orb (purple) */}
+              <div
+                className="pointer-events-none absolute bottom-[15%] left-[10%] h-[250px] w-[250px]"
+                style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.04) 0%, transparent 70%)' }}
+              />
+
+              <QuestionScreen
+                question={currentQuestionData}
+                questionIndex={flatQuestions.indexOf(currentQuestionData)}
+                totalQuestions={totalQuestions}
+                value={answers[currentQuestionData?.id]}
+                onChange={handleAnswer}
+              />
+
+              {/* Desktop navigation */}
+              <div className="mt-10 hidden w-full max-w-[520px] items-center justify-between lg:flex">
+                {!isFirstQuestion ? (
+                  <button
+                    onClick={goPrev}
+                    className="text-[13px] opacity-25 transition-opacity duration-200 hover:opacity-50 cursor-pointer"
+                  >
+                    ← Wstecz
+                  </button>
+                ) : (
+                  <div />
+                )}
+                <button
+                  onClick={goNext}
+                  className="cursor-pointer rounded-full bg-gradient-to-r from-rose-500 to-purple-500 px-8 py-3 text-[13px] font-semibold shadow-[0_0_30px_rgba(255,45,99,0.2)] transition-all duration-200 hover:shadow-[0_0_40px_rgba(255,45,99,0.3)]"
+                >
+                  {isLastQuestion ? 'Podsumuj i wyślij' : 'Dalej →'}
+                </button>
+              </div>
+
+              {/* Mobile bottom navigation */}
+              <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between border-t border-white/[0.06] bg-[#0a0a12]/90 px-6 py-4 backdrop-blur-xl lg:hidden">
+                {!isFirstQuestion ? (
+                  <button onClick={goPrev} className="text-[13px] opacity-40 cursor-pointer">
+                    ← Wstecz
+                  </button>
+                ) : (
+                  <div />
+                )}
+                <button
+                  onClick={goNext}
+                  className="cursor-pointer rounded-full bg-gradient-to-r from-rose-500 to-purple-500 px-6 py-2.5 text-[13px] font-semibold"
+                >
+                  {isLastQuestion ? 'Wyślij' : 'Dalej →'}
+                </button>
+              </div>
+
+              {submitError && (
+                <p className="mt-4 text-sm text-rose-400">{submitError}</p>
+              )}
+            </main>
+          </motion.div>
+        )}
+
+        {screen === 'summary' && (
+          <motion.div
+            key="summary"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="flex min-h-screen"
+          >
+            <Sidebar
+              config={config}
+              visibleSections={visibleSections}
+              currentSectionIndex={-1}
+              completedSections={new Set(visibleSections.map((s) => s.id))}
+              totalQuestions={totalQuestions}
+              answeredCount={totalQuestions}
+              onSectionClick={() => {}}
+            />
+            <main className="flex-1 flex flex-col items-center px-6 lg:px-16 pt-24 pb-20 lg:pt-12 lg:pb-12 overflow-y-auto">
+              <SummaryScreen
+                config={config}
+                answers={answers}
+                visibleSections={visibleSections}
+              />
+            </main>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
