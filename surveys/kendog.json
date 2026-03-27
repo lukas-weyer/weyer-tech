@@ -1,0 +1,332 @@
+{
+  "token": "k9d2f7a1",
+  "client": {
+    "name": "KenDog",
+    "contact": "Aniu",
+    "contactFormal": "Ania"
+  },
+  "sections": [
+    {
+      "id": "business",
+      "title": "Biznes i cele",
+      "questions": [
+        {
+          "id": "product_count",
+          "type": "text",
+          "label": "Ile produktów masz w ofercie? Planujesz rozszerzać?",
+          "description": "Liczba produktów wpływa na to jak zorganizujemy katalog — czy potrzebna jest zaawansowana filtracja, wyszukiwarka, podział na wiele kategorii.",
+          "placeholder": "np. Około 50, planuję rozszerzać do 100+"
+        },
+        {
+          "id": "current_traffic",
+          "type": "text",
+          "label": "Jaki masz obecny miesięczny ruch i sprzedaż na WooCommerce?",
+          "description": "Chcę wiedzieć na jaką skalę projektować sklep od startu — ile zamówień dziennie, ilu odwiedzających.",
+          "placeholder": "np. 5000 odwiedzin/mies, 30 zamówień"
+        },
+        {
+          "id": "migration_reason",
+          "type": "textarea",
+          "label": "Co jest głównym powodem migracji z WooCommerce?",
+          "description": "Każda migracja ma swój powód — wolna strona, ograniczenia wtyczek, problemy z aktualizacjami.",
+          "placeholder": "np. Wolna strona, ciągłe problemy z wtyczkami..."
+        },
+        {
+          "id": "launch_date",
+          "type": "text",
+          "label": "Kiedy chciałabyś wystartować z nowym sklepem?",
+          "description": "Termin wpływa na to jak podzielimy pracę na etapy.",
+          "placeholder": "np. Do końca wakacji"
+        },
+        {
+          "id": "budget_approach",
+          "type": "singleSelect",
+          "label": "Masz budżet, który chcesz zmieścić, czy wolisz najpierw zobaczyć opcje?",
+          "description": "Nie pytam żeby wycisnąć maksimum — chcę dopasować zakres do Twoich możliwości.",
+          "options": [
+            "Mam konkretny budżet",
+            "Wolę zobaczyć opcje i wybrać",
+            "Chcę minimum na start, potem rozbudowa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "features",
+      "title": "Funkcjonalności",
+      "questions": [
+        {
+          "id": "payments",
+          "type": "multiSelect",
+          "label": "Jakie metody płatności potrzebujesz?",
+          "description": "Każda metoda płatności to osobna integracja. BLIK i Przelewy24 to standard w Polsce.",
+          "options": [
+            "BLIK",
+            "Przelewy24",
+            "Karta płatnicza",
+            "Pobranie przy odbiorze",
+            "Przelew tradycyjny"
+          ]
+        },
+        {
+          "id": "shipping",
+          "type": "multiSelect",
+          "label": "Jakie metody dostawy?",
+          "description": "Paczkomaty InPost wymagają specjalnej integracji (mapa wyboru paczkomatu w checkout).",
+          "options": [
+            "InPost paczkomat",
+            "Kurier InPost",
+            "DPD",
+            "Poczta Polska",
+            "Odbiór osobisty"
+          ]
+        },
+        {
+          "id": "customer_accounts",
+          "type": "yesNo",
+          "label": "Czy klienci mają mieć konta?",
+          "description": "Konta to wygoda dla powracających kupujących — historia zamówień, zapisane adresy."
+        },
+        {
+          "id": "discount_codes",
+          "type": "yesNo",
+          "label": "Czy potrzebujesz kody rabatowe / promocje?",
+          "description": "Medusa obsługuje kody rabatowe natywnie — procentowe, kwotowe, darmowa dostawa."
+        },
+        {
+          "id": "international",
+          "type": "yesNo",
+          "label": "Czy sprzedajesz tylko w Polsce czy też za granicę?",
+          "description": "Sprzedaż zagraniczna wymaga obsługi wielu walut, tłumaczeń, różnych stawek VAT."
+        },
+        {
+          "id": "loyalty",
+          "type": "singleSelect",
+          "label": "Czy masz program lojalnościowy lub planujesz?",
+          "description": "Programy lojalnościowe to custom development — punkty, progi, nagrody.",
+          "options": [
+            "Nie planuję",
+            "Planuję w przyszłości",
+            "Mam i chcę przenieść"
+          ]
+        },
+        {
+          "id": "has_b2b",
+          "type": "yesNo",
+          "label": "Czy planujesz sprzedaż hurtową (B2B)?",
+          "description": "Jeśli tak — pokażę dodatkowe pytania o model B2B.",
+          "showSection": "b2b"
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "title": "Marketing",
+      "questions": [
+        {
+          "id": "blog",
+          "type": "yesNo",
+          "label": "Czy potrzebujesz bloga / poradnika?",
+          "description": "Blog to dobre narzędzie SEO — przyciąga ruch organiczny z Google."
+        },
+        {
+          "id": "newsletter_system",
+          "type": "singleSelect",
+          "label": "Newsletter — zbierasz maile? Jaki system?",
+          "description": "Jeśli już zbierasz maile, zintegruję nowy sklep z tym samym systemem.",
+          "options": [
+            "Mailchimp",
+            "MailerLite",
+            "FreshMail",
+            "Inny",
+            "Nie zbieram"
+          ]
+        },
+        {
+          "id": "social_media",
+          "type": "multiSelect",
+          "label": "Jakie social media prowadzisz? Potrzeba integracji?",
+          "description": "Pixel Facebooka i katalog produktów w Meta umożliwia tagowanie produktów na Instagramie.",
+          "options": [
+            "Instagram",
+            "Facebook",
+            "TikTok",
+            "Pinterest",
+            "Żadne"
+          ]
+        },
+        {
+          "id": "analytics",
+          "type": "multiSelect",
+          "label": "Czy korzystasz z Google Analytics / Facebook Pixel?",
+          "description": "Jeśli masz działające konta, podłączę je do nowego sklepu.",
+          "options": [
+            "Google Analytics",
+            "Facebook Pixel",
+            "Żadne",
+            "Nie wiem"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Operacje",
+      "questions": [
+        {
+          "id": "shop_manager",
+          "type": "text",
+          "label": "Kto będzie zarządzał sklepem na co dzień?",
+          "description": "Od tego zależy jak prosty musi być panel admina i czy potrzebne jest szkolenie.",
+          "placeholder": "np. Ja osobiście, mam pracownika..."
+        },
+        {
+          "id": "invoice_system",
+          "type": "singleSelect",
+          "label": "Używasz jakiegoś systemu do faktur?",
+          "description": "Mogę zintegrować sklep żeby faktury generowały się automatycznie po zamówieniu.",
+          "options": [
+            "iFirma",
+            "Fakturownia",
+            "wFirma",
+            "InFakt",
+            "Księgowa robi ręcznie",
+            "Inny"
+          ]
+        },
+        {
+          "id": "warehouse",
+          "type": "yesNo",
+          "label": "Czy potrzebujesz integrację z systemem magazynowym?",
+          "description": "Synchronizacja stanów magazynowych jest kluczowa jeśli sprzedajesz na wielu kanałach."
+        },
+        {
+          "id": "product_photos",
+          "type": "singleSelect",
+          "label": "Jak teraz robisz zdjęcia produktów?",
+          "description": "Jakość zdjęć ma ogromny wpływ na wygląd sklepu.",
+          "options": [
+            "Własne zdjęcia",
+            "Fotograf",
+            "Zdjęcia z WooCommerce do przeniesienia",
+            "Planuję nowe sesje"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "title": "Design",
+      "questions": [
+        {
+          "id": "branding",
+          "type": "singleSelect",
+          "label": "Masz logo / księgę znaku / wytyczne brandowe?",
+          "description": "Jeśli masz — użyję ich żeby sklep był spójny z resztą Twojej marki.",
+          "options": [
+            "Mam logo i kolory firmowe",
+            "Mam tylko logo",
+            "Nie mam — potrzebuję"
+          ]
+        },
+        {
+          "id": "inspiration",
+          "type": "textarea",
+          "label": "Są strony / sklepy których wygląd Ci się podoba?",
+          "description": "Wyślij linki do 2-3 sklepów — chcę zobaczyć co Ci się podoba.",
+          "placeholder": "np. https://example.com — podoba mi się układ i kolory"
+        },
+        {
+          "id": "design_approach",
+          "type": "singleSelect",
+          "label": "Czy potrzebujesz projektu od grafika, czy obecny kierunek Ci odpowiada?",
+          "description": "Obecny design demo jest moją propozycją — mogę go rozwijać lub wdrożyć projekt graficzny.",
+          "options": [
+            "Obecny kierunek mi się podoba",
+            "Chcę projekt od grafika",
+            "Nie wiem jeszcze"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2b",
+      "title": "B2B",
+      "conditional": true,
+      "label": "opcja",
+      "questions": [
+        {
+          "id": "b2b_clients",
+          "type": "text",
+          "label": "Kto jest Twoim klientem B2B?",
+          "description": "Typ klienta wpływa na to jak zaprojektujemy rejestrację, cennik i proces zamówienia.",
+          "placeholder": "np. Sklepy zoologiczne, groomerzy..."
+        },
+        {
+          "id": "b2b_count",
+          "type": "singleSelect",
+          "label": "Ilu masz / planujesz mieć klientów hurtowych?",
+          "description": "Mała baza wystarczy z prostym rozwiązaniem, duża wymaga automatyzacji.",
+          "options": [
+            "1-10",
+            "10-50",
+            "50+",
+            "Dopiero planuję"
+          ]
+        },
+        {
+          "id": "b2b_same_store",
+          "type": "singleSelect",
+          "label": "Czy B2B i B2C mają działać w jednym sklepie?",
+          "description": "Jeden sklep z dwoma trybami jest tańszy w utrzymaniu.",
+          "options": [
+            "Jeden sklep z dwoma trybami",
+            "Osobny panel B2B",
+            "Nie wiem"
+          ]
+        },
+        {
+          "id": "b2b_pricing",
+          "type": "singleSelect",
+          "label": "Czy klienci B2B mają inne ceny niż detaliczni?",
+          "description": "Medusa obsługuje Price Lists i Customer Groups.",
+          "options": [
+            "Stały rabat procentowy",
+            "Osobny cennik per klient",
+            "Progi ilościowe",
+            "Nie wiem jeszcze"
+          ]
+        },
+        {
+          "id": "b2b_min_order",
+          "type": "yesNo",
+          "label": "Czy jest minimalna wartość / ilość zamówienia hurtowego?",
+          "description": "Jeśli tak — dodamy walidację w checkout."
+        },
+        {
+          "id": "b2b_registration",
+          "type": "singleSelect",
+          "label": "Czy rejestracja B2B wymaga zatwierdzenia?",
+          "description": "W większości przypadków konta B2B wymagają ręcznego zatwierdzenia.",
+          "options": [
+            "Ręczne zatwierdzenie",
+            "Automatyczne po weryfikacji NIP",
+            "Automatyczne bez weryfikacji"
+          ]
+        },
+        {
+          "id": "b2b_payment",
+          "type": "singleSelect",
+          "label": "Płatności B2B — od razu czy z odroczonym terminem?",
+          "description": "Odroczony termin płatności wymaga systemu śledzenia należności.",
+          "options": [
+            "Tylko przedpłata",
+            "Przelew 14 dni",
+            "Przelew 30 dni",
+            "Do ustalenia"
+          ]
+        }
+      ]
+    }
+  ]
+}
