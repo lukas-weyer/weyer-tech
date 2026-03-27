@@ -143,7 +143,7 @@ export default function SummaryScreen({ config, answers, visibleSections }) {
                   return (
                     <div key={question.id}>
                       <p className="text-[11px] opacity-25">
-                        {question.title}
+                        {question.label}
                       </p>
                       {renderAnswer(question, answer)}
                     </div>
@@ -161,7 +161,7 @@ export default function SummaryScreen({ config, answers, visibleSections }) {
         className="mt-8 p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center"
       >
         <p className="text-[12px] opacity-25 mb-2">Kontakt</p>
-        <p className="text-sm opacity-60">lukasz@weyer.tech</p>
+        <p className="text-sm opacity-60">kontakt@weyer.tech</p>
         <p className="text-[12px] opacity-25 mt-1">weyer.tech</p>
       </motion.div>
     </motion.div>
