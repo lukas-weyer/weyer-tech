@@ -184,25 +184,27 @@ export default function Survey({ config }) {
 
     const lines = [];
     for (const section of visibleSections) {
-      lines.push(`\n--- ${section.title.toUpperCase()} ---\n`);
+      lines.push(`--- ${section.title.toUpperCase()} ---`);
       for (const q of section.questions) {
-        lines.push(q.question);
         const a = answers[q.id];
+        const label = q.label || q.id;
         if (a === undefined || a === null || a === '') {
-          lines.push('→ (pominięte)\n');
+          lines.push(`${label}: (pominięte)`);
         } else if (Array.isArray(a)) {
-          lines.push(`→ ${a.join(', ')}\n`);
+          lines.push(`${label}: ${a.join(', ')}`);
         } else if (typeof a === 'boolean') {
-          lines.push(`→ ${a ? 'Tak' : 'Nie'}\n`);
+          lines.push(`${label}: ${a ? 'Tak' : 'Nie'}`);
         } else {
-          lines.push(`→ ${a}\n`);
+          lines.push(`${label}: ${a}`);
         }
       }
+      lines.push('');
     }
 
     for (const section of config.sections) {
       if (section.conditional && !visibleSections.includes(section)) {
-        lines.push(`\n--- ${section.title.toUpperCase()} --- pominięta\n`);
+        lines.push(`--- ${section.title.toUpperCase()} --- pominięta`);
+        lines.push('');
       }
     }
 
