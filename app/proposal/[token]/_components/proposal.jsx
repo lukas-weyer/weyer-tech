@@ -368,6 +368,23 @@ export default function Proposal({ data }) {
           ))}
         </motion.div>
 
+        {/* Pricing note */}
+        <motion.div
+          {...fadeUp}
+          className="mx-auto mt-10 max-w-lg rounded-2xl border border-white/[0.06] bg-white/[0.03] px-8 py-6 text-center"
+        >
+          <p className="text-sm leading-relaxed opacity-40">
+            Moja standardowa stawka to{' '}
+            <span className="font-semibold text-white/70">160 PLN/h</span>.
+            W tej wycenie zastosowałem{' '}
+            <span className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text font-semibold text-transparent">
+              50% rabatu
+            </span>
+            {' '}— wszystkie kwoty obliczone przy stawce{' '}
+            <span className="font-semibold text-white/70">80 PLN/h</span>.
+          </p>
+        </motion.div>
+
         {/* Phase breakdown tiles */}
         <motion.div
           className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
@@ -576,47 +593,32 @@ export default function Proposal({ data }) {
       {/* ── 8. FOOTER / CTA ── */}
       <Section>
         <div className="border-t border-white/[0.06] pt-24">
-          <motion.div {...fadeUp} className="text-center">
-            <p className="text-[11px] uppercase tracking-[4px] opacity-30">
-              Zaczynamy?
-            </p>
-            <h2 className="mt-2 text-3xl font-bold md:text-5xl">
-              Następne kroki
+          <motion.div {...fadeUp} className="mx-auto max-w-xl text-center">
+            <h2 className="text-3xl font-bold md:text-5xl">
+              Co dalej?
             </h2>
+            <p className="mt-6 text-[15px] leading-relaxed opacity-40">
+              Przejrzyj wycenę w spokoju, przemyśl które etapy są dla Ciebie
+              priorytetem na start. Nie musisz decydować od razu — daj znać
+              gdy będziesz gotowa, a umówimy się na krótką rozmowę żeby
+              doprecyzować szczegóły.
+            </p>
+            <p className="mt-4 text-[14px] leading-relaxed opacity-25">
+              Jeśli masz pytania do któregokolwiek punktu — pisz śmiało,
+              chętnie wyjaśnię.
+            </p>
           </motion.div>
 
-          <motion.div
-            className="mt-16 grid gap-6 sm:grid-cols-2 md:grid-cols-4"
-            {...staggerContainer}
-          >
-            {[
-              { step: '01', label: 'Wybierasz etapy' },
-              { step: '02', label: 'Krótki call' },
-              { step: '03', label: 'Umowa' },
-              { step: '04', label: 'Start' },
-            ].map((s) => (
-              <motion.div
-                key={s.step}
-                className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 text-center"
-                {...staggerItem}
-              >
-                <span className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-3xl font-bold text-transparent">
-                  {s.step}
-                </span>
-                <p className="mt-2 text-sm opacity-50">{s.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.div {...fadeUp} className="mt-20 text-center">
+          <motion.div {...fadeUp} className="mt-16 text-center">
             <a
               href="mailto:kontakt@weyer.tech"
               className="inline-block rounded-full bg-gradient-to-r from-rose-500 to-purple-500 px-10 py-4 text-sm font-semibold tracking-wide text-white transition-shadow hover:shadow-lg hover:shadow-rose-500/20"
             >
-              kontakt@weyer.tech
+              Napisz do mnie
             </a>
+            <p className="mt-3 text-[13px] opacity-25">kontakt@weyer.tech</p>
 
-            <div className="mt-8 flex items-center justify-center gap-4 text-sm opacity-30">
+            <div className="mt-10 flex items-center justify-center gap-4 text-sm opacity-30">
               <a
                 href="https://weyer.tech"
                 target="_blank"

@@ -9,7 +9,7 @@
   "validUntil": "30.04.2026",
   "summary": {
     "totalHours": 357,
-    "totalCost": 35700,
+    "totalCost": 28560,
     "currency": "PLN",
     "timeline": "3-5 miesięcy",
     "phases": 4
@@ -21,7 +21,7 @@
       "subtitle": "Fundament Twojego nowego sklepu",
       "description": "W pełni działający sklep internetowy, w którym klienci mogą przeglądać produkty, składać zamówienia i płacić. Migracja wszystkich produktów z WooCommerce.",
       "hours": 187,
-      "cost": 18700,
+      "cost": 14960,
       "timeline": "6-8 tygodni",
       "priority": "Krytyczny",
       "items": [
@@ -50,7 +50,7 @@
       "subtitle": "Otwórz się na klientów z Europy",
       "description": "Klienci z zagranicy mogą kupować w swoich walutach, z przetłumaczonym interfejsem i dopasowanymi metodami dostawy.",
       "hours": 46,
-      "cost": 4600,
+      "cost": 3680,
       "timeline": "2-3 tygodnie",
       "priority": "Wysoki",
       "items": [
@@ -67,7 +67,7 @@
       "subtitle": "Dla sklepów zoologicznych i hurtowników",
       "description": "Dedykowany tryb hurtowy w tym samym sklepie — rejestracja firmowa, cenniki z progami ilościowymi, ręczne zatwierdzanie klientów B2B.",
       "hours": 64,
-      "cost": 6400,
+      "cost": 5120,
       "timeline": "3-4 tygodnie",
       "priority": "Wysoki",
       "items": [
@@ -86,7 +86,7 @@
       "subtitle": "Dopasuj akcesoria do rasy i wielkości psa",
       "description": "Interaktywny wizard inspirowany Puig.pl — klient wybiera rasę lub wielkość psa, a sklep proponuje idealnie dopasowane akcesoria (obroże, szelki) w odpowiednim rozmiarze.",
       "hours": 60,
-      "cost": 6000,
+      "cost": 4800,
       "timeline": "3-4 tygodnie",
       "priority": "Średni",
       "items": [
@@ -99,11 +99,11 @@
     }
   ],
   "extras": [
-    { "name": "Facebook Pixel + katalog Meta", "description": "Śledzenie konwersji na Facebooku + synchronizacja katalogu produktów do Meta Commerce Manager", "hours": 8, "cost": 800 },
-    { "name": "Instagram Shopping", "description": "Tagowanie produktów na zdjęciach na Instagramie — klienci klikają i trafiają do sklepu", "hours": 6, "cost": 600 },
-    { "name": "Newsletter", "description": "Integracja z MailerLite lub Mailchimp — popup zapisu, automatyczne serie powitalne, segmentacja", "hours": 8, "cost": 800 },
-    { "name": "Program lojalnościowy", "description": "System punktów za zakupy — progi, nagrody (rabaty, darmowa dostawa), panel punktów w koncie klienta", "hours": 30, "cost": 3000 },
-    { "name": "Blog / poradnik", "description": "Sekcja blogowa z poradnikami (np. 'Jak dobrać rozmiar szelek') — SEO, CMS do zarządzania treścią", "hours": 16, "cost": 1600 }
+    { "name": "Facebook Pixel + katalog Meta", "description": "Śledzenie konwersji na Facebooku + synchronizacja katalogu produktów do Meta Commerce Manager", "hours": 8, "cost": 640 },
+    { "name": "Instagram Shopping", "description": "Tagowanie produktów na zdjęciach na Instagramie — klienci klikają i trafiają do sklepu", "hours": 6, "cost": 480 },
+    { "name": "Newsletter", "description": "Integracja z MailerLite lub Mailchimp — popup zapisu, automatyczne serie powitalne, segmentacja", "hours": 8, "cost": 640 },
+    { "name": "Program lojalnościowy", "description": "System punktów za zakupy — progi, nagrody (rabaty, darmowa dostawa), panel punktów w koncie klienta", "hours": 30, "cost": 2400 },
+    { "name": "Blog / poradnik", "description": "Sekcja blogowa z poradnikami (np. 'Jak dobrać rozmiar szelek') — SEO, CMS do zarządzania treścią", "hours": 16, "cost": 1280 }
   ],
   "requirements": [
     { "icon": "palette", "title": "Logo i kolory", "description": "Logo w formacie wektorowym (SVG lub AI) + kolory firmowe" },
