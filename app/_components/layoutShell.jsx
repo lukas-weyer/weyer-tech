@@ -8,9 +8,9 @@ import Preloader from './preloader';
 
 export default function LayoutShell({ children }) {
   const pathname = usePathname();
-  const isDiscovery = pathname.startsWith('/discovery');
+  const isMinimal = pathname.startsWith('/discovery') || pathname.startsWith('/proposal');
 
-  if (isDiscovery) {
+  if (isMinimal) {
     return children;
   }
 
