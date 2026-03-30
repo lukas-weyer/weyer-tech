@@ -329,6 +329,23 @@ export default function Proposal({ data }) {
 
       {/* ── 2. SUMMARY CARDS ── */}
       <Section>
+        {/* Pricing note — full width */}
+        <motion.div
+          {...fadeUp}
+          className="mb-8 rounded-2xl border border-white/[0.06] bg-white/[0.03] px-8 py-6 text-center"
+        >
+          <p className="text-sm leading-relaxed opacity-40">
+            Moja standardowa stawka to{' '}
+            <span className="font-semibold text-white/70">160 PLN/h</span>.
+            W tej wycenie zastosowałem{' '}
+            <span className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text font-semibold text-transparent">
+              50% rabatu
+            </span>
+            {' '}— wszystkie kwoty obliczone przy stawce{' '}
+            <span className="font-semibold text-white/70">80 PLN/h</span>.
+          </p>
+        </motion.div>
+
         <motion.div
           className="grid gap-6 md:grid-cols-3"
           {...staggerContainer}
@@ -366,23 +383,6 @@ export default function Proposal({ data }) {
               <p className="mt-3 text-sm opacity-30">{card.label}</p>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Pricing note */}
-        <motion.div
-          {...fadeUp}
-          className="mx-auto mt-10 max-w-lg rounded-2xl border border-white/[0.06] bg-white/[0.03] px-8 py-6 text-center"
-        >
-          <p className="text-sm leading-relaxed opacity-40">
-            Moja standardowa stawka to{' '}
-            <span className="font-semibold text-white/70">160 PLN/h</span>.
-            W tej wycenie zastosowałem{' '}
-            <span className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text font-semibold text-transparent">
-              50% rabatu
-            </span>
-            {' '}— wszystkie kwoty obliczone przy stawce{' '}
-            <span className="font-semibold text-white/70">80 PLN/h</span>.
-          </p>
         </motion.div>
 
         {/* Phase breakdown tiles */}
