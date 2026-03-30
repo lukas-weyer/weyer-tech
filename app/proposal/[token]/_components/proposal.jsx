@@ -367,6 +367,38 @@ export default function Proposal({ data }) {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Phase breakdown tiles */}
+        <motion.div
+          className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+          {...staggerContainer}
+        >
+          {phases.map((phase, i) => {
+            const gradients = [
+              'from-rose-500 to-pink-500',
+              'from-purple-500 to-blue-500',
+              'from-blue-500 to-cyan-500',
+              'from-pink-500 to-purple-500',
+            ];
+            return (
+              <motion.div
+                key={phase.id}
+                className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-5 py-6 text-center"
+                {...staggerItem}
+              >
+                <p className="text-[10px] uppercase tracking-[3px] opacity-20 mb-2">
+                  Etap {phase.id}
+                </p>
+                <div className={`whitespace-nowrap bg-gradient-to-r ${gradients[i % 4]} bg-clip-text pb-1 leading-[1.2] text-xl font-bold text-transparent`}>
+                  <AnimatedNumber value={phase.cost} suffix="" />
+                  <span className="ml-1 text-sm">PLN</span>
+                </div>
+                <p className="mt-1.5 text-[12px] opacity-40 leading-snug">{phase.title}</p>
+                <p className="mt-1 text-[11px] opacity-20">{phase.timeline}</p>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </Section>
 
       {/* ── 3. PHASES ── */}
