@@ -338,9 +338,9 @@ export default function Proposal({ data }) {
             className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-8 text-center"
             {...staggerItem}
           >
-            <div className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+            <div className="whitespace-nowrap bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
               <AnimatedNumber value={summary.totalCost} suffix="" />
-              <span className="ml-2 text-2xl">{summary.currency}</span>
+              <span className="ml-1.5 text-xl md:text-2xl">{summary.currency}</span>
             </div>
             <p className="mt-3 text-sm opacity-30">
               Łączny koszt (Etap 1-{summary.phases})
@@ -352,7 +352,7 @@ export default function Proposal({ data }) {
             className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-8 text-center"
             {...staggerItem}
           >
-            <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+            <div className="whitespace-nowrap bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
               {summary.timeline}
             </div>
             <p className="mt-3 text-sm opacity-30">Czas realizacji</p>
@@ -363,7 +363,7 @@ export default function Proposal({ data }) {
             className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-8 text-center"
             {...staggerItem}
           >
-            <div className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+            <div className="whitespace-nowrap bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
               <AnimatedNumber value={summary.totalHours} suffix="h" />
             </div>
             <p className="mt-3 text-sm opacity-30">Godziny pracy</p>
