@@ -616,6 +616,12 @@ export default function Proposal({ data }) {
             >
               Napisz do mnie
             </a>
+            <button
+              onClick={() => window.print()}
+              className="ml-4 inline-block cursor-pointer rounded-full border border-white/[0.12] px-8 py-4 text-sm font-semibold tracking-wide text-white/60 transition-all hover:border-white/[0.2] hover:text-white/80 print:hidden"
+            >
+              Pobierz PDF
+            </button>
             <p className="mt-3 text-[13px] opacity-25">kontakt@weyer.tech</p>
 
             <div className="mt-10 flex items-center justify-center gap-4 text-sm opacity-30">

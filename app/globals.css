@@ -76,3 +76,54 @@ html {
     transform: translateY(8px);
   }
 }
+
+/* ── Print styles ── */
+@media print {
+  * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: #1a1a1a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* gradient text needs special handling for print */
+  [class*='bg-clip-text'] {
+    -webkit-text-fill-color: #1a1a1a !important;
+    color: #1a1a1a !important;
+  }
+
+  /* hide decorative elements */
+  [class*='pointer-events-none'],
+  [class*='animate-bounce'] {
+    display: none !important;
+  }
+
+  /* remove dark backgrounds, keep borders readable */
+  [class*='bg-[#0a0a12]'],
+  [class*='bg-white/'] {
+    background: white !important;
+  }
+
+  [class*='border-white/'] {
+    border-color: #e5e5e5 !important;
+  }
+
+  [class*='opacity-3'],
+  [class*='opacity-4'],
+  [class*='opacity-5'] {
+    opacity: 1 !important;
+    color: #555 !important;
+  }
+
+  /* page breaks */
+  section {
+    break-inside: avoid;
+  }
+}
