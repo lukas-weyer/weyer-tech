@@ -333,41 +333,39 @@ export default function Proposal({ data }) {
           className="grid gap-6 md:grid-cols-3"
           {...staggerContainer}
         >
-          {/* total cost */}
-          <motion.div
-            className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-8 text-center"
-            {...staggerItem}
-          >
-            <div className="whitespace-nowrap bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text pb-1 leading-[1.2] text-3xl font-bold text-transparent md:text-4xl">
-              <AnimatedNumber value={summary.totalCost} suffix="" />
-              <span className="ml-1.5 text-xl md:text-2xl">{summary.currency}</span>
-            </div>
-            <p className="mt-3 text-sm opacity-30">
-              Łączny koszt (Etap 1-{summary.phases})
-            </p>
-          </motion.div>
-
-          {/* timeline */}
-          <motion.div
-            className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-8 text-center"
-            {...staggerItem}
-          >
-            <div className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text pb-1 pr-1 leading-[1.2] text-2xl font-bold text-transparent sm:text-3xl md:text-4xl">
-              {summary.timeline}
-            </div>
-            <p className="mt-3 text-sm opacity-30">Czas realizacji</p>
-          </motion.div>
-
-          {/* hours */}
-          <motion.div
-            className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-8 text-center"
-            {...staggerItem}
-          >
-            <div className="whitespace-nowrap bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text pb-1 leading-[1.2] text-3xl font-bold text-transparent md:text-4xl">
-              <AnimatedNumber value={summary.totalHours} suffix="h" />
-            </div>
-            <p className="mt-3 text-sm opacity-30">Godziny pracy</p>
-          </motion.div>
+          {[
+            {
+              gradient: 'from-rose-500 to-purple-500',
+              content: (
+                <>
+                  <AnimatedNumber value={summary.totalCost} suffix="" />
+                  <span className="ml-1.5 text-lg">{summary.currency}</span>
+                </>
+              ),
+              label: `Łączny koszt (Etap 1-${summary.phases})`,
+            },
+            {
+              gradient: 'from-purple-500 to-blue-500',
+              content: summary.timeline,
+              label: 'Czas realizacji',
+            },
+            {
+              gradient: 'from-rose-500 to-purple-500',
+              content: <AnimatedNumber value={summary.totalHours} suffix="h" />,
+              label: 'Godziny pracy',
+            },
+          ].map((card, i) => (
+            <motion.div
+              key={i}
+              className="flex flex-col items-center justify-center rounded-2xl border border-white/[0.06] bg-white/[0.03] p-8"
+              {...staggerItem}
+            >
+              <div className={`whitespace-nowrap bg-gradient-to-r ${card.gradient} bg-clip-text pb-1 leading-[1.2] text-2xl font-bold text-transparent md:text-3xl`}>
+                {card.content}
+              </div>
+              <p className="mt-3 text-sm opacity-30">{card.label}</p>
+            </motion.div>
+          ))}
         </motion.div>
       </Section>
 
