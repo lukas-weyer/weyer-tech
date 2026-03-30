@@ -329,7 +329,7 @@ export default function Proposal({ data }) {
 
       {/* ── 2. SUMMARY CARDS ── */}
       <Section>
-        {/* Pricing note — full width */}
+        {/* Pricing note - full width */}
         <motion.div
           {...fadeUp}
           className="mb-8 rounded-2xl border border-white/[0.06] bg-white/[0.03] px-8 py-6 text-center"
@@ -551,19 +551,19 @@ export default function Proposal({ data }) {
             {[
               {
                 title: 'Płatność etapami',
-                desc: 'Płacisz za każdy etap osobno — po jego zakończeniu i akceptacji.',
+                desc: 'Płacisz za każdy etap osobno - po jego zakończeniu i akceptacji.',
               },
               {
                 title: 'Cotygodniowe demo',
-                desc: 'Co tydzień pokazuję postępy na żywo — widzisz efekty pracy w czasie rzeczywistym.',
+                desc: 'Co tydzień pokazuję postępy na żywo - widzisz efekty pracy w czasie rzeczywistym.',
               },
               {
                 title: 'Bieżący kontakt',
-                desc: 'Piszesz kiedy chcesz — odpowiadam szybko, bez formalnych ticketów.',
+                desc: 'Piszesz kiedy chcesz - odpowiadam szybko, bez formalnych ticketów.',
               },
               {
                 title: 'Poprawki w cenie',
-                desc: 'Poprawki w ramach zakresu etapu są wliczone — żadnych ukrytych kosztów.',
+                desc: 'Poprawki w ramach zakresu etapu są wliczone - żadnych ukrytych kosztów.',
               },
             ].map((item, i) => (
               <motion.div
@@ -599,30 +599,32 @@ export default function Proposal({ data }) {
             </h2>
             <p className="mt-6 text-[15px] leading-relaxed opacity-40">
               Przejrzyj wycenę w spokoju, przemyśl które etapy są dla Ciebie
-              priorytetem na start. Nie musisz decydować od razu — daj znać
+              priorytetem na start. Nie musisz decydować od razu - daj znać
               gdy będziesz gotowa, a umówimy się na krótką rozmowę żeby
               doprecyzować szczegóły.
             </p>
             <p className="mt-4 text-[14px] leading-relaxed opacity-25">
-              Jeśli masz pytania do któregokolwiek punktu — pisz śmiało,
+              Jeśli masz pytania do któregokolwiek punktu - pisz śmiało,
               chętnie wyjaśnię.
             </p>
           </motion.div>
 
-          <motion.div {...fadeUp} className="mt-16 text-center">
+          <motion.div {...fadeUp} className="mt-16 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
             <a
               href="mailto:kontakt@weyer.tech"
-              className="inline-block rounded-full bg-gradient-to-r from-rose-500 to-purple-500 px-10 py-4 text-sm font-semibold tracking-wide text-white transition-shadow hover:shadow-lg hover:shadow-rose-500/20"
+              className="inline-block w-full rounded-full bg-gradient-to-r from-rose-500 to-purple-500 px-10 py-4 text-center text-sm font-semibold tracking-wide text-white transition-shadow hover:shadow-lg hover:shadow-rose-500/20 sm:w-auto"
             >
               Napisz do mnie
             </a>
             <button
               onClick={() => window.print()}
-              className="ml-4 inline-block cursor-pointer rounded-full border border-white/[0.12] px-8 py-4 text-sm font-semibold tracking-wide text-white/60 transition-all hover:border-white/[0.2] hover:text-white/80 print:hidden"
+              className="inline-block w-full cursor-pointer rounded-full border border-white/[0.12] px-8 py-4 text-center text-sm font-semibold tracking-wide text-white/60 transition-all hover:border-white/[0.2] hover:text-white/80 print:hidden sm:w-auto"
             >
               Pobierz PDF
             </button>
-            <p className="mt-3 text-[13px] opacity-25">kontakt@weyer.tech</p>
+          </motion.div>
+          <motion.div {...fadeUp} className="mt-4 text-center">
+            <p className="text-[13px] opacity-25">kontakt@weyer.tech</p>
 
             <div className="mt-10 flex items-center justify-center gap-4 text-sm opacity-30">
               <a

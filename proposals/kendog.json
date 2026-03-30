@@ -17,7 +17,7 @@
   "phases": [
     {
       "id": 1,
-      "title": "MVP — Sklep gotowy do sprzedaży",
+      "title": "MVP - Sklep gotowy do sprzedaży",
       "subtitle": "Fundament Twojego nowego sklepu",
       "description": "W pełni działający sklep internetowy, w którym klienci mogą przeglądać produkty, składać zamówienia i płacić. Migracja wszystkich produktów z WooCommerce.",
       "hours": 187,
@@ -26,21 +26,21 @@
       "priority": "Krytyczny",
       "items": [
         { "name": "Backend Medusa", "description": "Instalacja, konfiguracja serwera commerce, hosting w chmurze", "hours": 8 },
-        { "name": "Migracja produktów", "description": "Import ~2000 SKU z WooCommerce — produkty, warianty (rozmiary), zdjęcia, ceny, opisy", "hours": 16 },
-        { "name": "Storefront — design i development", "description": "Strona główna, listing produktów, strona produktu, koszyk, checkout. Design nawiązujący do brandu KenDog (logo, kolory firmowe). Inspiracje: Baylabel.pl (kategorie), Dogahead (animacje)", "hours": 40 },
+        { "name": "Migracja produktów", "description": "Import ~2000 SKU z WooCommerce - produkty, warianty (rozmiary), zdjęcia, ceny, opisy", "hours": 16 },
+        { "name": "Storefront - design i development", "description": "Strona główna, listing produktów, strona produktu, koszyk, checkout. Design nawiązujący do brandu KenDog (logo, kolory firmowe). Inspiracje: Baylabel.pl (kategorie), Dogahead (animacje)", "hours": 40 },
         { "name": "Wyszukiwarka produktów", "description": "Szybkie wyszukiwanie po nazwie z podpowiedziami i auto-complete", "hours": 10 },
-        { "name": "Filtrowanie i sortowanie", "description": "Filtry po rozmiarze, kolorze, cenie — podłączone do backendu Medusa", "hours": 8 },
+        { "name": "Filtrowanie i sortowanie", "description": "Filtry po rozmiarze, kolorze, cenie - podłączone do backendu Medusa", "hours": 8 },
         { "name": "Konta klientów", "description": "Rejestracja, logowanie, resetowanie hasła, historia zamówień, zapisane adresy dostawy", "hours": 16 },
-        { "name": "Płatności — BLIK + Przelewy24", "description": "Integracja z operatorem płatności (Przelewy24 lub Stripe). Obsługa BLIK, szybkich przelewów, kart płatniczych", "hours": 12 },
-        { "name": "Płatności — pobranie", "description": "Opcja zapłaty przy odbiorze z dodatkową opłatą konfigurowalną z panelu", "hours": 4 },
-        { "name": "Dostawa — InPost", "description": "Paczkomat (interaktywna mapa Geowidget do wyboru paczkomatu) + kurier InPost. Integracja z ShipX API — automatyczne tworzenie przesyłek", "hours": 30 },
-        { "name": "Dostawa — odbiór osobisty", "description": "Opcja odbioru osobistego w checkout z adresem punktu", "hours": 3 },
-        { "name": "Kody rabatowe i promocje", "description": "System kodów rabatowych — procentowe, kwotowe, darmowa dostawa. Zarządzanie z panelu Medusa Admin", "hours": 4 },
+        { "name": "Płatności - BLIK + Przelewy24", "description": "Integracja z operatorem płatności (Przelewy24 lub Stripe). Obsługa BLIK, szybkich przelewów, kart płatniczych", "hours": 12 },
+        { "name": "Płatności - pobranie", "description": "Opcja zapłaty przy odbiorze z dodatkową opłatą konfigurowalną z panelu", "hours": 4 },
+        { "name": "Dostawa - InPost", "description": "Paczkomat (interaktywna mapa Geowidget do wyboru paczkomatu) + kurier InPost. Integracja z ShipX API - automatyczne tworzenie przesyłek", "hours": 30 },
+        { "name": "Dostawa - odbiór osobisty", "description": "Opcja odbioru osobistego w checkout z adresem punktu", "hours": 3 },
+        { "name": "Kody rabatowe i promocje", "description": "System kodów rabatowych - procentowe, kwotowe, darmowa dostawa. Zarządzanie z panelu Medusa Admin", "hours": 4 },
         { "name": "Google Analytics", "description": "GA4 z pełnym śledzeniem konwersji e-commerce (dodanie do koszyka, rozpoczęcie checkout, zakup)", "hours": 4 },
         { "name": "SEO", "description": "Meta tagi per strona, mapa witryny (sitemap.xml), Open Graph, dane strukturalne (Schema.org), indeksowanie w Google", "hours": 8 },
         { "name": "Responsywność", "description": "Pełna optymalizacja dla telefonu, tabletu i desktopa. Mobile-first design", "hours": 8 },
-        { "name": "Panel administracyjny", "description": "Medusa Admin — intuicyjne zarządzanie produktami, zamówieniami, klientami, promocjami", "hours": 4 },
-        { "name": "Szkolenie", "description": "Nagranie instruktażowe lub spotkanie online — jak zarządzać sklepem na co dzień", "hours": 4 },
+        { "name": "Panel administracyjny", "description": "Medusa Admin - intuicyjne zarządzanie produktami, zamówieniami, klientami, promocjami", "hours": 4 },
+        { "name": "Szkolenie", "description": "Nagranie instruktażowe lub spotkanie online - jak zarządzać sklepem na co dzień", "hours": 4 },
         { "name": "Deploy i testy", "description": "Wdrożenie produkcyjne, testy end-to-end, optymalizacja wydajności", "hours": 8 }
       ]
     },
@@ -63,9 +63,9 @@
     },
     {
       "id": 3,
-      "title": "B2B — Sprzedaż hurtowa",
+      "title": "B2B - Sprzedaż hurtowa",
       "subtitle": "Dla sklepów zoologicznych i hurtowników",
-      "description": "Dedykowany tryb hurtowy w tym samym sklepie — rejestracja firmowa, cenniki z progami ilościowymi, ręczne zatwierdzanie klientów B2B.",
+      "description": "Dedykowany tryb hurtowy w tym samym sklepie - rejestracja firmowa, cenniki z progami ilościowymi, ręczne zatwierdzanie klientów B2B.",
       "hours": 64,
       "cost": 5120,
       "timeline": "3-4 tygodnie",
@@ -73,18 +73,18 @@
       "items": [
         { "name": "Rejestracja B2B", "description": "Formularz rejestracji firmowej (NIP, nazwa firmy, adres) z ręcznym zatwierdzaniem przez admina. Powiadomienie email o nowym zgłoszeniu", "hours": 12 },
         { "name": "Grupy klientów", "description": "Podział na klientów detalicznych i hurtowych w systemie Medusa (Customer Groups)", "hours": 6 },
-        { "name": "Cenniki B2B z progami", "description": "Price Lists z progami ilościowymi — np. >20 szt. = -15%, >50 szt. = -25%, >100 szt. = -35%. Konfiguracja z panelu admina", "hours": 12 },
-        { "name": "Minimalna wartość zamówienia", "description": "Walidacja w checkout — blokada zamówień poniżej ustalonego progu (kwotowego lub ilościowego)", "hours": 4 },
-        { "name": "Panel klienta B2B", "description": "Dedykowany widok konta hurtowego — aktualny cennik, historia zamówień, status realizacji, faktury", "hours": 16 },
+        { "name": "Cenniki B2B z progami", "description": "Price Lists z progami ilościowymi - np. >20 szt. = -15%, >50 szt. = -25%, >100 szt. = -35%. Konfiguracja z panelu admina", "hours": 12 },
+        { "name": "Minimalna wartość zamówienia", "description": "Walidacja w checkout - blokada zamówień poniżej ustalonego progu (kwotowego lub ilościowego)", "hours": 4 },
+        { "name": "Panel klienta B2B", "description": "Dedykowany widok konta hurtowego - aktualny cennik, historia zamówień, status realizacji, faktury", "hours": 16 },
         { "name": "Płatności B2B", "description": "Przelew tradycyjny z odroczonym terminem płatności (do doprecyzowania: 14 lub 30 dni)", "hours": 8 },
-        { "name": "Testy i deploy", "description": "Kompleksowe testy flow B2B — rejestracja, zatwierdzenie, zamówienie, cenniki, deploy", "hours": 6 }
+        { "name": "Testy i deploy", "description": "Kompleksowe testy flow B2B - rejestracja, zatwierdzenie, zamówienie, cenniki, deploy", "hours": 6 }
       ]
     },
     {
       "id": 4,
       "title": "Konfigurator akcesoriów",
       "subtitle": "Dopasuj akcesoria do rasy i wielkości psa",
-      "description": "Interaktywny wizard inspirowany Puig.pl — klient wybiera rasę lub wielkość psa, a sklep proponuje idealnie dopasowane akcesoria (obroże, szelki) w odpowiednim rozmiarze.",
+      "description": "Interaktywny wizard inspirowany Puig.pl - klient wybiera rasę lub wielkość psa, a sklep proponuje idealnie dopasowane akcesoria (obroże, szelki) w odpowiednim rozmiarze.",
       "hours": 60,
       "cost": 4800,
       "timeline": "3-4 tygodnie",
@@ -92,7 +92,7 @@
       "items": [
         { "name": "Projektowanie UX", "description": "Zaprojektowanie flow konfiguratora: wybór rasy → określenie wielkości → propozycje produktów z dopasowanymi rozmiarami", "hours": 12 },
         { "name": "Baza ras i rozmiarów", "description": "Model danych: rasy psów z przypisanymi zakresami rozmiarów, mapowanie na warianty produktów KenDog", "hours": 8 },
-        { "name": "Frontend konfiguratora", "description": "Interaktywny, animowany wizard — krok po kroku z wizualizacjami ras, progresem, płynnymi przejściami", "hours": 24 },
+        { "name": "Frontend konfiguratora", "description": "Interaktywny, animowany wizard - krok po kroku z wizualizacjami ras, progresem, płynnymi przejściami", "hours": 24 },
         { "name": "Logika dopasowania", "description": "Algorytm doboru: rasa → zakres wielkości → filtrowanie produktów → rekomendacja wariantów w odpowiednim rozmiarze", "hours": 10 },
         { "name": "Integracja z koszykiem", "description": "Dodawanie proponowanych produktów bezpośrednio z konfiguratora do koszyka ze wskazanym rozmiarem", "hours": 6 }
       ]
@@ -100,17 +100,17 @@
   ],
   "extras": [
     { "name": "Facebook Pixel + katalog Meta", "description": "Śledzenie konwersji na Facebooku + synchronizacja katalogu produktów do Meta Commerce Manager", "hours": 8, "cost": 640 },
-    { "name": "Instagram Shopping", "description": "Tagowanie produktów na zdjęciach na Instagramie — klienci klikają i trafiają do sklepu", "hours": 6, "cost": 480 },
-    { "name": "Newsletter", "description": "Integracja z MailerLite lub Mailchimp — popup zapisu, automatyczne serie powitalne, segmentacja", "hours": 8, "cost": 640 },
-    { "name": "Program lojalnościowy", "description": "System punktów za zakupy — progi, nagrody (rabaty, darmowa dostawa), panel punktów w koncie klienta", "hours": 30, "cost": 2400 },
-    { "name": "Blog / poradnik", "description": "Sekcja blogowa z poradnikami (np. 'Jak dobrać rozmiar szelek') — SEO, CMS do zarządzania treścią", "hours": 16, "cost": 1280 }
+    { "name": "Instagram Shopping", "description": "Tagowanie produktów na zdjęciach na Instagramie - klienci klikają i trafiają do sklepu", "hours": 6, "cost": 480 },
+    { "name": "Newsletter", "description": "Integracja z MailerLite lub Mailchimp - popup zapisu, automatyczne serie powitalne, segmentacja", "hours": 8, "cost": 640 },
+    { "name": "Program lojalnościowy", "description": "System punktów za zakupy - progi, nagrody (rabaty, darmowa dostawa), panel punktów w koncie klienta", "hours": 30, "cost": 2400 },
+    { "name": "Blog / poradnik", "description": "Sekcja blogowa z poradnikami (np. 'Jak dobrać rozmiar szelek') - SEO, CMS do zarządzania treścią", "hours": 16, "cost": 1280 }
   ],
   "requirements": [
     { "icon": "palette", "title": "Logo i kolory", "description": "Logo w formacie wektorowym (SVG lub AI) + kolory firmowe" },
-    { "icon": "database", "title": "Dostęp do WooCommerce", "description": "Dane logowania do panelu WP — potrzebne do migracji produktów" },
+    { "icon": "database", "title": "Dostęp do WooCommerce", "description": "Dane logowania do panelu WP - potrzebne do migracji produktów" },
     { "icon": "truck", "title": "Konto InPost Business", "description": "Konto firmowe InPost z kluczem API do integracji ShipX" },
     { "icon": "credit-card", "title": "Konto Przelewy24", "description": "Konto sprzedawcy w Przelewy24 (lub Stripe) do obsługi płatności online" },
-    { "icon": "chart", "title": "Google Analytics", "description": "Konto GA4 — jeśli nie masz, założę od zera" }
+    { "icon": "chart", "title": "Google Analytics", "description": "Konto GA4 - jeśli nie masz, założę od zera" }
   ],
   "hosting": {
     "monthly": "100-200 PLN",
