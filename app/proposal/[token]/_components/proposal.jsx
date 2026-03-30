@@ -129,6 +129,79 @@ function Section({ children, className = '' }) {
 
 /* ─── MAIN COMPONENT ─── */
 
+function PasswordGate({ password, clientName, onUnlock }) {
+  const [input, setInput] = useState('');
+  const [error, setError] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (input === password) {
+      sessionStorage.setItem(`proposal_unlocked_${password}`, '1');
+      onUnlock();
+    } else {
+      setError(true);
+      setTimeout(() => setError(false), 1500);
+    }
+  }
+
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-[#0a0a12] px-6">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-sm text-center"
+      >
+        <div className="mb-8">
+          <Logo className="mx-auto h-auto w-8 mb-4" />
+          <p className="text-[11px] uppercase tracking-[4px] opacity-30 mb-3">
+            Wycena
+          </p>
+          <h1 className="text-2xl font-bold text-white">
+            <span className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-transparent">
+              {clientName}
+            </span>
+          </h1>
+          <p className="mt-2 text-sm opacity-30">
+            Ten dokument jest chroniony hasłem
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+          <input
+            type="password"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Wpisz hasło..."
+            autoFocus
+            className={`w-full rounded-xl border bg-white/[0.04] px-5 py-4 text-center text-[15px] text-white placeholder-white/20 outline-none transition-all duration-300 ${
+              error
+                ? 'border-rose-500/50 shadow-[0_0_20px_rgba(255,45,99,0.15)]'
+                : 'border-white/[0.08] focus:border-purple-500/50'
+            }`}
+          />
+          <button
+            type="submit"
+            className="cursor-pointer rounded-full bg-gradient-to-r from-rose-500 to-purple-500 py-3.5 text-[13px] font-semibold shadow-[0_0_30px_rgba(255,45,99,0.2)] transition-all duration-200 hover:shadow-[0_0_40px_rgba(255,45,99,0.3)]"
+          >
+            Otwórz wycenę
+          </button>
+        </form>
+
+        {error && (
+          <motion.p
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-3 text-sm text-rose-400"
+          >
+            Nieprawidłowe hasło
+          </motion.p>
+        )}
+      </motion.div>
+    </div>
+  );
+}
+
 export default function Proposal({ data }) {
   const {
     client,
@@ -140,6 +213,27 @@ export default function Proposal({ data }) {
     requirements,
     hosting,
   } = data;
+
+  const [unlocked, setUnlocked] = useState(false);
+
+  useEffect(() => {
+    if (!data.password) {
+      setUnlocked(true);
+      return;
+    }
+    const saved = sessionStorage.getItem(`proposal_unlocked_${data.password}`);
+    if (saved) setUnlocked(true);
+  }, [data.password]);
+
+  if (!unlocked && data.password) {
+    return (
+      <PasswordGate
+        password={data.password}
+        clientName={client.name}
+        onUnlock={() => setUnlocked(true)}
+      />
+    );
+  }
 
   return (
     <div className="relative min-h-screen bg-[#0a0a12] text-white selection:bg-rose-500/30">

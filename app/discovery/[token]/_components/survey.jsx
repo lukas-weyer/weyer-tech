@@ -231,7 +231,7 @@ export default function Survey({ config }) {
 
   return (
     <div className="min-h-screen bg-[#0a0a12]">
-      {/* Hidden Netlify form for detection */}
+      {/* Hidden Netlify form for detection — declares all fields */}
       <form
         name={`discovery-${config.token}`}
         data-netlify="true"
@@ -241,7 +241,11 @@ export default function Survey({ config }) {
         <input name="form-name" />
         <input name="bot-field" />
         <input name="client" />
-        <textarea name="answers" />
+        {config.sections.flatMap((s) =>
+          s.questions.map((q) => (
+            <input key={q.id} name={q.label || q.id} />
+          ))
+        )}
       </form>
 
       <AnimatePresence mode="wait">
