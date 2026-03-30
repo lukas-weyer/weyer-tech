@@ -19,13 +19,13 @@
       "id": 1,
       "title": "MVP — Sklep gotowy do sprzedaży",
       "subtitle": "Fundament Twojego nowego sklepu",
-      "description": "W pełni działający sklep internetowy, w którym klientki mogą przeglądać produkty, składać zamówienia i płacić. Migracja wszystkich produktów z WooCommerce.",
+      "description": "W pełni działający sklep internetowy, w którym klienci mogą przeglądać produkty, składać zamówienia i płacić. Migracja wszystkich produktów z WooCommerce.",
       "hours": 187,
       "cost": 18700,
       "timeline": "6-8 tygodni",
       "priority": "Krytyczny",
       "items": [
-        { "name": "Backend Medusa", "description": "Instalacja, konfiguracja serwera commerce, hosting na Railway", "hours": 8 },
+        { "name": "Backend Medusa", "description": "Instalacja, konfiguracja serwera commerce, hosting w chmurze", "hours": 8 },
         { "name": "Migracja produktów", "description": "Import ~2000 SKU z WooCommerce — produkty, warianty (rozmiary), zdjęcia, ceny, opisy", "hours": 16 },
         { "name": "Storefront — design i development", "description": "Strona główna, listing produktów, strona produktu, koszyk, checkout. Design nawiązujący do brandu KenDog (logo, kolory firmowe). Inspiracje: Baylabel.pl (kategorie), Dogahead (animacje)", "hours": 40 },
         { "name": "Wyszukiwarka produktów", "description": "Szybkie wyszukiwanie po nazwie z podpowiedziami i auto-complete", "hours": 10 },
@@ -41,7 +41,7 @@
         { "name": "Responsywność", "description": "Pełna optymalizacja dla telefonu, tabletu i desktopa. Mobile-first design", "hours": 8 },
         { "name": "Panel administracyjny", "description": "Medusa Admin — intuicyjne zarządzanie produktami, zamówieniami, klientami, promocjami", "hours": 4 },
         { "name": "Szkolenie", "description": "Nagranie instruktażowe lub spotkanie online — jak zarządzać sklepem na co dzień", "hours": 4 },
-        { "name": "Deploy i testy", "description": "Wdrożenie produkcyjne (Vercel + Railway), testy end-to-end, optymalizacja wydajności", "hours": 8 }
+        { "name": "Deploy i testy", "description": "Wdrożenie produkcyjne, testy end-to-end, optymalizacja wydajności", "hours": 8 }
       ]
     },
     {
@@ -84,7 +84,7 @@
       "id": 4,
       "title": "Konfigurator akcesoriów",
       "subtitle": "Dopasuj akcesoria do rasy i wielkości psa",
-      "description": "Interaktywny wizard inspirowany Puig.pl — klientka wybiera rasę lub wielkość psa, a sklep proponuje idealnie dopasowane akcesoria (obroże, szelki) w odpowiednim rozmiarze.",
+      "description": "Interaktywny wizard inspirowany Puig.pl — klient wybiera rasę lub wielkość psa, a sklep proponuje idealnie dopasowane akcesoria (obroże, szelki) w odpowiednim rozmiarze.",
       "hours": 60,
       "cost": 6000,
       "timeline": "3-4 tygodnie",
@@ -100,7 +100,7 @@
   ],
   "extras": [
     { "name": "Facebook Pixel + katalog Meta", "description": "Śledzenie konwersji na Facebooku + synchronizacja katalogu produktów do Meta Commerce Manager", "hours": 8, "cost": 800 },
-    { "name": "Instagram Shopping", "description": "Tagowanie produktów na zdjęciach na Instagramie — klientki klikają i trafiają do sklepu", "hours": 6, "cost": 600 },
+    { "name": "Instagram Shopping", "description": "Tagowanie produktów na zdjęciach na Instagramie — klienci klikają i trafiają do sklepu", "hours": 6, "cost": 600 },
     { "name": "Newsletter", "description": "Integracja z MailerLite lub Mailchimp — popup zapisu, automatyczne serie powitalne, segmentacja", "hours": 8, "cost": 800 },
     { "name": "Program lojalnościowy", "description": "System punktów za zakupy — progi, nagrody (rabaty, darmowa dostawa), panel punktów w koncie klienta", "hours": 30, "cost": 3000 },
     { "name": "Blog / poradnik", "description": "Sekcja blogowa z poradnikami (np. 'Jak dobrać rozmiar szelek') — SEO, CMS do zarządzania treścią", "hours": 16, "cost": 1600 }
@@ -114,6 +114,6 @@
   ],
   "hosting": {
     "monthly": "100-200 PLN",
-    "includes": "Vercel (frontend) + Railway (backend Medusa) + domena kendog.pl"
+    "includes": "Hosting frontend (Vercel, Netlify lub Cloudflare Pages) + hosting backend (Railway, Render, DigitalOcean lub AWS) + domena kendog.pl"
   }
 }
